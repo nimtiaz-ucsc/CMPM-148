@@ -479,7 +479,7 @@ DLG 5
 """
 {
   - {item "photo"} == 0 ?
-    The picture which Gregor had recently cut out of an illustrated magazine{pg}and put into a pretty gilt frame.{pg}It showed a lady, with a fur cap on and a fur stole,{pg}sitting upright and holding out to the spectator{pg}a huge fur muff into which the whole of her forearm had vanished!{item "photo" 1}
+    The picture which Gregor had recently cut out of an illustrated magazine and put into a pretty gilt frame.{pg}It showed a lady, with a fur cap on and a fur stole, sitting upright and holding out to the spectator a huge fur muff into which the whole of her forearm had vanished!{item "photo" 1}
 }
 """
 NAME photo dialog
@@ -494,8 +494,8 @@ DLG 6
           - {item "suitcase"} == 1 ?
             {
               - {item "window"} == 1 ?
-                time to sleep :)
-            }
+                time to sleep :) {pg}
+            }{exit "1" 3 7}
         }
     }
 }
