@@ -39,8 +39,8 @@ PAL 2
 ROOM 0
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 0,0,0,0,0,0,0,0,0,e,a,a,a,f,0,0
-0,0,0,0,e,a,a,a,a,g,i,0,j,h,f,0
-0,0,0,0,d,0,b,0,0,0,0,b,0,0,d,0
+0,0,0,0,e,a,a,a,a,g,i,a,j,h,f,0
+0,0,0,0,d,0,c,0,0,0,0,b,0,0,d,0
 0,e,a,a,g,0,b,0,b,0,0,0,0,0,d,0
 0,d,0,0,0,0,0,0,0,0,0,0,0,0,d,0
 0,d,k,0,0,0,0,0,0,0,0,0,0,0,d,0
@@ -56,6 +56,26 @@ ROOM 0
 NAME bedroom 1
 PAL 1
 
+ROOM 1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,e,a,a,a,a,a,a,a,a,f,0,e,a,f,0
+0,d,0,0,0,0,0,0,0,0,h,a,g,0,d,0
+0,d,0,0,0,0,0,0,0,0,0,d,0,0,d,0
+0,d,0,0,0,0,0,0,0,0,0,h,a,0,d,0
+0,d,0,0,0,0,0,0,0,0,0,0,0,0,d,0
+0,d,0,0,0,0,0,0,0,0,0,0,0,0,d,0
+0,d,0,0,0,0,0,0,0,0,0,e,a,0,d,0
+0,d,0,0,0,0,0,0,0,0,0,d,0,0,d,0
+0,h,a,a,a,a,a,a,a,a,a,a,a,a,g,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+NAME living room
+PAL 1
+
 TIL a
 11111111
 00100100
@@ -66,6 +86,7 @@ TIL a
 00100100
 11111111
 NAME wallH
+WAL true
 
 TIL b
 00000000
@@ -85,18 +106,10 @@ TIL c
 01000010
 01000010
 11111111
-10000001
-10011001
->
-00111100
-01000010
-01000010
-01000010
-01000010
+11100111
 11111111
-10000001
-10011001
 NAME mirror
+WAL false
 
 TIL d
 10100101
@@ -108,6 +121,7 @@ TIL d
 10100101
 10100101
 NAME wallV
+WAL true
 
 TIL e
 00011111
@@ -119,6 +133,7 @@ TIL e
 10100100
 10100101
 NAME wallC1
+WAL true
 
 TIL f
 11111000
@@ -130,6 +145,7 @@ TIL f
 00100101
 10100101
 NAME wallC2
+WAL true
 
 TIL g
 10100101
@@ -141,6 +157,7 @@ TIL g
 00100100
 11111000
 NAME wallC3
+WAL true
 
 TIL h
 10100101
@@ -152,6 +169,7 @@ TIL h
 00100100
 00011111
 NAME wallC4
+WAL true
 
 TIL i
 00000111
@@ -238,6 +256,7 @@ SPR c
 11111111
 00000000
 NAME window
+DLG 7
 POS 0 11,2
 
 SPR d
@@ -250,6 +269,7 @@ SPR d
 00111100
 01000010
 NAME photo
+DLG 5
 POS 0 8,3
 
 SPR e
@@ -274,6 +294,7 @@ SPR f
 01111111
 01100000
 NAME table1
+DLG 4
 POS 0 8,6
 
 SPR g
@@ -286,6 +307,7 @@ SPR g
 11111110
 00000110
 NAME table2
+DLG 4
 POS 0 9,6
 
 SPR h
@@ -298,6 +320,7 @@ SPR h
 01000010
 01111110
 NAME suitcase
+DLG 4
 POS 0 10,6
 
 SPR i
@@ -305,51 +328,79 @@ SPR i
 01000011
 01000011
 01000010
-011100101
-010000111
+01110010
+01000011
 01000011
 01111110
 NAME door
 POS 0 11,15
 
-ITM 0
+ITM 2
+00111100
+01000010
+01000010
+01000010
+01000010
+11111111
+11100111
+11111111
+NAME mirror
+DLG 3
+
+ITM 3
 00000000
+00111100
+11100111
+10111101
+10000001
+11111111
+00111100
+01000010
+NAME photo
+DLG 5
+
+ITM 4
 00000000
 00000000
 00111100
-01100100
-00100100
-00011000
+01100110
+01111110
+01000010
+01000010
+01111110
+NAME table
+
+ITM 5
+11111111
+10000001
+10000001
+10000001
+10000001
+10000001
+11111111
 00000000
-NAME tea
-DLG 1
-
-ITM 1
-00000000
-00111100
-00100100
-00111100
-00010000
-00011000
-00010000
-00011000
-NAME key
-DLG 2
-
-DLG 1
-You found a nice warm cup of tea
-NAME tea dialog
-
-DLG 2
-A key! {wvy}What does it open?{wvy}
-NAME key dialog
+NAME window
+DLG 7
 
 DLG 3
-{mirror = true} "What has happened to me?"
+ "What has happened to me?"{pg}It was no dream.{pg}Gregor found himself transformed into a gigantic insect.{item "mirror" 1}
 NAME mirror dialog
 
-VAR mirror
-false
+DLG 4
+A collection of cloth samples was unpacked and spread out--{pg}Samsa was a commercial traveler.{item "table" 1}
+NAME table dialog
+
+DLG 5
+ The picture which Gregor had recently cut out of an illustrated magazine and put into a pretty gilt frame.{pg}It showed a lady, with a fur cap on and a fur stole, sitting upright and holding out to the spectator a huge fur muff into which the whole of her forearm had vanished!{item "photo" 1}
+NAME photo dialog
+
+DLG 6
+ zzz
+NAME bed dialog
+
+DLG 7
+Gregor's eyes turned to the window, and the overcast sky--{pg}one could hear raindrops beating on the window--{pg}made him quite melancholy.{item "window" 1}
+NAME window dialog
 
 TUNE 1
 3d,0,0,0,3d5,0,0,0,3l,0,0,0,3s,0,0,0
