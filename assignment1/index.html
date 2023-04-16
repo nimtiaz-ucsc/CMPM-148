@@ -63,20 +63,20 @@ NAME bedroom 1
 PAL 1
 
 ROOM 1
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-0,e,a,a,a,a,a,a,a,a,f,0,e,a,f,0
-0,d,0,0,0,0,0,0,0,0,h,a,g,0,d,0
-0,d,0,0,0,0,0,0,0,0,0,d,0,0,d,0
-0,d,0,0,0,0,0,0,0,0,0,h,a,0,d,0
+0,0,0,0,0,0,0,0,0,0,d,z,d,0,0,0
+0,0,0,0,0,0,0,0,0,0,d,0,d,0,0,0
+0,0,0,0,0,0,0,0,0,0,d,0,d,0,0,0
+0,0,0,0,0,0,0,0,0,e,g,0,h,a,f,0
+0,e,a,a,a,a,a,a,a,g,0,0,0,0,d,0
 0,d,0,0,0,0,0,0,0,0,0,0,0,0,d,0
 0,d,0,0,0,0,0,0,0,0,0,0,0,0,d,0
-0,d,0,0,0,0,0,0,0,0,0,e,a,0,d,0
-0,d,0,0,0,0,0,0,0,0,0,d,0,0,d,0
-0,h,a,a,a,a,a,a,a,a,a,a,a,a,g,0
+0,d,0,0,0,0,0,0,0,0,0,0,0,0,d,0
+0,d,0,0,0,0,0,0,0,0,0,0,0,0,d,0
+0,d,0,0,0,0,0,0,0,0,0,0,0,0,d,0
+0,d,0,0,0,0,0,0,0,0,0,0,0,0,d,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 NAME living room
@@ -148,6 +148,16 @@ ROOM 4
 0,0,0,0,0,0,0,0,0,0,d,0,d,0,0,0
 0,0,0,0,0,0,0,0,0,0,d,x,d,0,0,0
 NAME bedroom 2
+ITM 8 5,5
+ITM 8 6,5
+ITM 8 6,6
+ITM 8 6,7
+ITM 8 6,8
+ITM 8 6,9
+ITM 9 10,9
+ITM 9 11,9
+ITM 9 12,9
+ITM a 11,13
 PAL 1
 
 TIL a
@@ -494,6 +504,17 @@ TIL y
 NAME bed
 WAL true
 
+TIL z
+01111110
+01000011
+01000011
+01110010
+01000010
+01000011
+01000011
+01111110
+NAME door2
+
 SPR A
 00100100
 00100100
@@ -623,7 +644,8 @@ SPR i
 01000011
 01000011
 01111110
-NAME door
+NAME door1
+DLG d
 POS 4 11,15
 
 ITM 2
@@ -707,11 +729,65 @@ ITM 7
 NAME exit2
 DLG 9
 
+ITM 8
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+>
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+NAME motherdialog
+DLG a
+
+ITM 9
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+>
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+NAME fatherdialog
+DLG b
+
+ITM a
+00000000
+01100110
+01000010
+00000000
+00000000
+01000010
+01100110
+00000000
+NAME bossdialog
+DLG c
+
 DLG 3
 """
 {
   - {item "mirror"} == 0 ?
-    "What has happened to me?"{pg}It was no dream.{pg}Gregor found himself transformed into a gigantic insect.{item "mirror" 1}{
+    {shk}"What has happened to me?"{/shk}{pg}It was no dream.{pg}Gregor found himself transformed into {shk}a gigantic insect{/shk}.{item "mirror" 1}{
       - {item "photo"} == 1 ?
         {
           - {item "suitcase"} == 1 ?
@@ -802,8 +878,34 @@ DLG 8
 NAME exit1 dialog
 
 DLG 9
-{exit "4" 4 6}Blah
+{exit "4" 4 6}"I'd better get up, since my train goes at five."{pg}{shk}"Heavenly Father!"{/shk}{pg}It was half past six o'clock and the hands were quietly moving on, it was even past the half-hour, it was getting on toward a quarter to seven.{pg}The next train went at seven o'clock;{pg}to catch that he would need to hurry like mad.
 NAME exit2 dialog
+
+DLG a
+"""
+{
+  - {item "motherdialog"} == 0 ?
+    "Gregor, it's a quarter to seven. Hadn't you a train to catch?"{pg}That gentle voice! It was his mother's.{pg}{shk}"Yes, yes, thank you, Mother, I'm getting up now."{/shk}{pg}Gregor had a shock as he heard his own voice answering hers,{pg}unmistakably his own voice, but with {shk}a persistent horrible twittering squeak{/shk} behind it.
+}
+"""
+NAME motherdialog dialog
+
+DLG b
+"""
+{
+  - {item "fatherdialog"} == 0 ?
+    "Gregor! Gregor! What's the matter with you?"{pg}his father called in a deep voice.{pg}"Gregor? Aren't you well? Aren't you needing anything?"{pg}his sister was saying in a low, plaintive tone.{pg}{shk}"I'm just ready."{/shk}
+}
+"""
+NAME fatherdialog dialog
+
+DLG c
+"Gregor, the chief clerk has come and wants to know why you didn't catch the early train."{pg}"Mr. Samsa," the chief clerk called in a loud voice, "what's the matter with you?"{pg}{shk}"I'm just going to open the door this very minute."{/shk}
+NAME bossdialog dialog
+
+DLG d
+{exit "1" 0 0}
+NAME door1 dialog
 
 TUNE 1
 3d,0,0,0,3d5,0,0,0,3l,0,0,0,3s,0,0,0
