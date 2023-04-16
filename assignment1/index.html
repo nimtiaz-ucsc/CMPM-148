@@ -29,18 +29,19 @@ PAL 1
 113,54,42
 187,146,135
 255,198,183
-NAME palette1
-
-PAL 2
-96,48,48
-178,128,162
-255,108,134
+NAME rooms
 
 PAL 3
 39,38,70
 185,164,254
 255,246,135
-NAME palette2
+NAME sleep
+
+PAL 4
+0,0,0
+0,0,0
+0,0,0
+NAME death
 
 ROOM 0
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -108,20 +109,20 @@ PAL 3
 
 ROOM 3
 t,u,w,v,u,t,v,u,v,u,v,v,u,w,u,t
-u,0,0,0,0,0,0,0,0,0,0,0,0,0,0,v
+u,0,t,0,0,0,0,w,0,0,0,t,0,0,0,v
 t,0,0,0,0,0,0,0,0,0,0,0,0,0,0,u
 u,0,0,0,0,0,0,0,0,0,0,0,0,0,0,v
 t,0,0,0,0,0,0,0,0,0,0,0,0,0,0,t
 v,0,0,0,0,0,0,0,0,w,t,0,0,0,0,u
-t,0,0,0,0,0,0,0,v,u,w,0,0,0,0,t
+t,u,0,0,0,0,0,0,v,u,w,0,0,0,u,t
 w,0,0,0,0,0,0,w,w,t,0,0,0,0,0,v
 t,0,0,0,0,0,0,t,v,0,0,0,0,0,0,u
 u,0,0,0,0,0,0,0,0,0,0,0,0,0,0,v
 v,0,0,0,0,0,0,0,0,0,0,0,0,0,0,t
-w,0,0,0,0,0,0,0,0,0,0,0,0,0,0,u
-u,0,0,0,0,0,0,0,0,0,0,0,0,0,0,t
-v,0,0,0,0,0,0,0,0,0,0,0,0,0,0,u
-t,0,0,0,0,0,0,0,0,0,0,0,0,0,0,v
+w,u,0,0,0,0,0,0,0,0,0,0,0,0,0,u
+u,t,0,0,0,0,0,0,0,0,0,0,0,0,0,t
+v,0,0,0,0,0,0,0,0,0,0,0,0,0,t,u
+t,0,0,0,t,0,0,0,0,w,0,0,0,0,u,v
 v,u,t,v,u,t,u,t,v,t,v,t,v,t,w,t
 NAME sleeping 2
 ITM 7 5,9
@@ -183,18 +184,18 @@ PAL 1
 ROOM 6
 t,u,w,v,u,t,v,u,v,u,v,v,u,w,u,t
 u,t,v,t,w,u,t,w,v,u,t,w,v,u,t,v
-t,v,0,0,0,0,0,0,0,0,0,0,0,0,w,u
+t,v,0,u,0,0,u,0,0,0,0,t,0,0,w,u
 u,w,0,0,0,0,0,0,0,0,0,0,0,0,t,v
-t,v,0,0,0,0,0,0,0,0,0,0,0,0,w,t
-v,w,0,0,0,0,0,0,0,w,t,0,0,0,v,u
-t,u,0,0,0,0,0,0,v,u,w,0,0,0,w,t
+t,v,w,0,0,0,0,0,0,0,0,0,0,0,w,t
+v,w,t,0,0,0,0,0,0,w,t,0,0,0,v,u
+t,u,0,0,0,0,0,0,v,u,w,0,0,v,w,t
 w,v,0,0,0,0,0,w,w,t,0,0,0,0,t,v
 t,w,0,0,0,0,0,t,v,0,0,0,0,0,v,u
 u,v,0,0,0,0,0,0,0,0,0,0,0,0,w,v
-v,u,0,0,0,0,0,0,0,0,0,0,0,0,t,t
-w,v,0,0,0,0,0,0,0,0,0,0,0,0,u,u
+v,u,v,0,0,0,0,0,0,0,0,0,0,0,t,t
+w,v,0,0,0,0,0,0,0,0,0,0,0,t,u,u
 u,w,0,0,0,0,0,0,0,0,0,0,0,0,v,t
-v,v,0,0,0,0,0,0,0,0,0,0,0,0,t,u
+v,v,0,v,0,0,0,t,0,0,t,w,0,0,t,u
 t,w,v,w,u,w,t,v,w,u,w,u,w,t,w,v
 v,u,t,v,u,t,u,t,v,t,v,t,v,t,w,t
 NAME sleeping 3
@@ -224,6 +225,142 @@ ROOM 7
 NAME bedroom 4
 ITM h 11,13
 PAL 1
+
+ROOM 8
+t,u,w,v,u,t,v,u,v,u,v,v,u,w,u,t
+u,t,v,t,w,u,t,w,v,u,t,w,v,u,t,v
+t,v,u,v,t,w,u,v,t,w,v,t,u,w,t,u
+u,w,t,0,0,0,0,u,0,v,0,w,0,u,t,v
+t,v,w,u,0,0,0,0,0,0,0,0,0,t,w,t
+v,w,u,0,0,0,0,0,0,w,t,0,0,w,v,u
+t,u,t,0,0,0,0,0,v,u,w,0,v,t,w,t
+w,v,t,0,0,0,0,w,w,t,0,0,0,w,t,v
+t,w,v,u,0,0,0,t,v,0,0,0,0,t,v,u
+u,v,u,0,0,0,0,0,0,0,0,0,t,u,w,v
+v,u,w,0,0,0,0,0,0,0,0,0,0,t,t,t
+w,v,u,v,0,0,0,0,0,0,0,0,0,v,u,u
+u,w,t,0,0,0,0,w,0,0,0,t,0,w,v,t
+v,v,w,t,w,u,w,t,u,v,t,v,t,u,t,u
+t,w,v,w,u,w,t,v,w,u,w,u,w,t,w,v
+v,u,t,v,u,t,u,t,v,t,v,t,v,t,w,t
+NAME sleeping 4
+ITM i 6,8
+ITM i 5,9
+ITM i 7,9
+ITM i 6,10
+PAL 3
+
+ROOM 9
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,e,a,a,a,f,0,0
+0,0,0,0,e,a,a,a,a,g,i,p,j,h,f,0
+0,0,0,0,d,0,c,0,l,0,0,b,0,0,d,0
+0,e,a,a,g,0,b,0,b,0,0,0,0,0,d,0
+0,d,0,0,0,0,0,0,0,0,0,0,0,0,d,0
+0,d,k,y,0,0,0,0,n,o,m,0,0,0,d,0
+0,d,0,b,0,0,0,0,13,14,0,0,b,0,d,0
+0,d,0,0,0,0,0,0,0,0,0,0,0,0,d,0
+0,d,0,0,0,0,0,0,0,0,0,0,0,0,d,0
+0,h,a,a,a,a,a,a,a,f,0,b,0,e,g,0
+0,0,0,0,0,0,0,0,0,h,f,0,e,g,0,0
+0,0,0,0,0,0,0,0,0,0,d,0,d,0,0,0
+0,0,0,0,0,0,0,0,0,0,d,0,d,0,0,0
+0,0,0,0,0,0,0,0,0,0,d,0,d,0,0,0
+0,0,0,0,0,0,0,0,0,0,d,x,d,0,0,0
+NAME bedroom 5
+ITM j 11,13
+PAL 1
+
+ROOM a
+t,u,w,v,u,t,v,u,v,u,v,v,u,w,u,t
+u,t,v,t,w,u,t,w,v,u,t,w,v,u,t,v
+t,v,u,v,t,w,u,v,t,w,v,t,u,w,t,u
+u,w,t,t,v,t,w,u,v,v,t,w,t,u,t,v
+t,v,w,u,0,0,v,0,0,0,t,u,v,t,w,t
+v,w,u,u,0,0,0,0,0,w,t,0,u,w,v,u
+t,u,t,v,0,0,0,0,v,u,w,0,v,t,w,t
+w,v,t,w,v,0,0,w,w,t,0,0,u,w,t,v
+t,w,v,u,0,0,0,t,v,0,0,0,u,t,v,u
+u,v,u,w,0,0,0,0,0,0,0,u,t,u,w,v
+v,u,w,u,v,0,0,0,0,0,0,0,w,t,t,t
+w,v,u,v,t,w,0,0,v,0,u,0,u,v,u,u
+u,w,t,t,u,t,v,w,t,u,w,t,v,w,v,t
+v,v,w,t,w,u,w,t,u,v,t,v,t,u,t,u
+t,w,v,w,u,w,t,v,w,u,w,u,w,t,w,v
+v,u,t,v,u,t,u,t,v,t,v,t,v,t,w,t
+NAME sleeping 5
+ITM k 6,8
+ITM k 5,9
+ITM k 6,10
+ITM k 7,9
+PAL 3
+
+ROOM b
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,e,a,a,a,f,0,0
+0,0,0,0,e,a,a,a,a,g,1b,1d,1c,h,f,0
+0,0,0,0,d,0,0,0,l,0,0,0,0,0,d,0
+0,e,a,a,g,0,1e,0,0,0,0,0,1e,0,d,0
+0,d,0,0,0,0,0,0,0,0,1e,0,0,0,d,0
+0,d,1e,0,0,0,0,0,0,0,0,0,0,0,d,0
+0,d,0,0,0,0,0,0,0,0,0,0,0,0,d,0
+0,d,0,0,0,1e,0,0,1e,0,0,0,1e,0,d,0
+0,d,0,0,0,0,0,0,0,0,0,0,0,0,d,0
+0,h,a,a,a,a,a,a,a,f,0,0,0,e,g,0
+0,0,0,0,0,0,0,0,0,h,f,0,e,g,0,0
+0,0,0,0,0,0,0,0,0,0,d,0,d,0,0,0
+0,0,0,0,0,0,0,0,0,0,d,0,d,0,0,0
+0,0,0,0,0,0,0,0,0,0,d,0,d,0,0,0
+0,0,0,0,0,0,0,0,0,0,d,x,d,0,0,0
+NAME bedroom 6
+ITM l 10,10
+ITM l 11,10
+ITM l 12,10
+PAL 1
+
+ROOM c
+t,u,w,v,u,t,v,u,v,u,v,v,u,w,u,t
+u,t,v,t,w,u,t,w,v,u,t,w,v,u,t,v
+t,v,u,v,t,w,u,v,t,w,v,t,u,w,t,u
+u,w,t,t,v,t,w,u,v,v,t,w,t,u,t,v
+t,v,w,u,t,u,v,w,u,w,t,u,v,t,w,t
+v,w,u,u,v,t,u,t,w,w,t,w,u,w,v,u
+t,u,t,v,t,u,v,w,v,u,w,v,v,t,w,t
+w,v,t,w,v,u,t,w,w,t,w,t,u,w,t,v
+t,w,v,u,w,v,0,t,v,w,v,t,u,t,v,u
+u,v,u,w,u,0,0,0,w,t,w,u,t,u,w,v
+v,u,w,u,v,t,0,t,u,w,t,t,w,t,t,t
+w,v,u,v,t,w,t,u,v,t,u,v,u,v,u,u
+u,w,t,t,u,t,v,w,t,u,w,t,v,w,v,t
+v,v,w,t,w,u,w,t,u,v,t,v,t,u,t,u
+t,w,v,w,u,w,t,v,w,u,w,u,w,t,w,v
+v,u,t,v,u,t,u,t,v,t,v,t,v,t,w,t
+NAME sleeping 6
+ITM m 6,8
+ITM m 5,9
+ITM m 7,9
+ITM m 6,10
+PAL 3
+
+ROOM d
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+NAME death
+PAL 4
 
 TIL 10
 01111110
@@ -711,6 +848,50 @@ TIL 1a
 NAME table6
 WAL true
 
+TIL 1b
+00001111
+00011000
+00011111
+00001000
+00011111
+00011000
+00001111
+00000000
+NAME closedL
+
+TIL 1c
+11110000
+00011000
+11111000
+00010000
+11111000
+00011000
+11110000
+00000000
+NAME closedR
+
+TIL 1d
+11111111
+00011000
+11111111
+00011000
+11111111
+00011000
+11111111
+00000000
+NAME closedWindow
+
+TIL 1e
+00011111
+11111110
+01000001
+11111110
+00101001
+01111110
+11100011
+00011100
+NAME streak
+
 SPR A
 00100100
 00100100
@@ -955,8 +1136,32 @@ SPR o
 01111110
 01111110
 NAME bed2
-DLG k
 POS 5 3,6
+
+SPR p
+00000000
+00111100
+11100111
+10111101
+10000001
+11111111
+00111100
+01000010
+NAME photo3
+DLG r
+POS b 8,3
+
+SPR q
+01111110
+01000011
+01000011
+01000010
+01110010
+01000011
+01000011
+01111110
+NAME door2
+POS b 11,15
 
 ITM 2
 00111100
@@ -1162,24 +1367,94 @@ NAME exit3
 DLG l
 
 ITM h
-00101010
-01010100
-00000000
+11001100
+00110010
+00000010
 00111100
 01000010
 11111111
 10000001
 01111110
 >
-01010100
-00101010
-00000000
+00110000
+11001100
+00000010
 00111100
 01000010
 11111111
 10000001
 01111110
 NAME food1
+DLG m
+
+ITM i
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+NAME exit4
+DLG n
+
+ITM j
+00101000
+01000010
+00001000
+10100110
+01011001
+11101011
+10110101
+01111110
+>
+10010010
+00000100
+01010000
+00100110
+01011001
+11101011
+10110101
+01111110
+NAME food2
+DLG o
+
+ITM k
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+NAME exit5
+DLG p
+
+ITM l
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+NAME familydialog
+DLG q
+
+ITM m
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+NAME exit6
+DLG s
 
 DLG 3
 """
@@ -1245,7 +1520,7 @@ DLG 6
           - {item "suitcase"} == 1 ?
             {
               - {item "window"} == 1 ?
-                {exit "3" 6 9}It could not be done,{pg}for he was accustomed to sleep on his right side{pg} and in his present condition he could not turn himself over.
+                {exit "3" 6 9 "fade_b"}It could not be done,{pg}for he was accustomed to sleep on his right side{pg} and in his present condition he could not turn himself over.
             }
         }
     }
@@ -1272,11 +1547,11 @@ DLG 7
 NAME window dialog
 
 DLG 8
-{exit "0" 4 6}Gregor Samsa awoke one morning from uneasy dreams.
+{exit "0" 4 6 "wave"}Gregor Samsa awoke one morning from uneasy dreams.
 NAME exit1 dialog
 
 DLG 9
-{exit "4" 4 6}"I'd better get up, since my train goes at five."{pg}{shk}"Heavenly Father!"{/shk}{pg}It was half past six o'clock and the hands were quietly moving on, it was even past the half-hour, it was getting on toward a quarter to seven.{pg}The next train went at seven o'clock;{pg}to catch that he would need to hurry like mad.
+{exit "4" 4 6 "wave"}"I'd better get up, since my train goes at five."{pg}{shk}"Heavenly Father!"{/shk}{pg}It was half past six o'clock and the hands were quietly moving on, it was even past the half-hour, it was getting on toward a quarter to seven.{pg}The next train went at seven o'clock;{pg}to catch that he would need to hurry like mad.
 NAME exit2 dialog
 
 DLG a
@@ -1302,7 +1577,7 @@ DLG c
 NAME bossdialog dialog
 
 DLG d
-Slowly Gregor caught hold of the door for support--{pg}the soles at the end of his little legs were somewhat sticky--{pg}and rested against it for a moment after his efforts.{pg}Then he set himself to turning the key in the lock with his mouth.{pg}He clenched his jaws recklessly with all the force at his command.{pg}{exit "1" 11 1}
+Slowly Gregor caught hold of the door for support--{pg}the soles at the end of his little legs were somewhat sticky--{pg}and rested against it for a moment after his efforts.{pg}Then he set himself to turning the key in the lock with his mouth.{pg}He clenched his jaws recklessly with all the force at his command.{pg}{exit "1" 11 1 "slide_d"}
 NAME door1 dialog
 
 DLG f
@@ -1315,7 +1590,7 @@ DLG f
 NAME photo2 dialog
 
 DLG g
-The chief clerk uttered a loud "Oh!"--{pg}he could now see the man, clapping one hand before his open mouth and slowly backing away as if driven by some invisible steady pressure.{pg}The chief clerk must be won over;{pg}the whole future of Gregor and his family depended on it!{pg}But he was already on the stairs.{pg}Unfortunately, the flight of the chief clerk seemed completely to upset Gregor's father,{pg}who began stamping his feet and flourishing a walking stick and newspaper to drive Gregor back into his room.{pg}{exit "5" 11 14}The door was slammed behind him with the stick, and then at last there was silence.{pg}{exit "6" 6 9}
+The chief clerk uttered a loud "Oh!"--{pg}he could now see the man, clapping one hand before his open mouth and slowly backing away as if driven by some invisible steady pressure.{pg}The chief clerk must be won over;{pg}the whole future of Gregor and his family depended on it!{pg}But he was already on the stairs.{pg}Unfortunately, the flight of the chief clerk seemed completely to upset Gregor's father,{pg}who began stamping his feet and flourishing a walking stick and newspaper to drive Gregor back into his room.{pg}{exit "5" 11 14 "slide_u"}The door was slammed behind him with the stick, and then at last there was silence.{pg}{exit "6" 6 9 "fade_b"}
 NAME boss dialog
 
 DLG h
@@ -1345,13 +1620,47 @@ DLG j
 """
 NAME sister dialog
 
-DLG k
-
-NAME bed2 dialog
-
 DLG l
-{exit "7" 4 6}Not until it was twilight did Gregor awake out of a deep sleep,{pg}more like a swoon than a sleep.
+{exit "7" 4 6 "wave"}Not until it was twilight did Gregor awake out of a deep sleep,{pg}more like a swoon than a sleep.
 NAME exit3 dialog
+
+DLG m
+There stood a basin filled with fresh milk in which floated little sops of white bread.{pg}He could almost have laughed with joy,{pg}but soon in disappointment he withdrew;{pg}he did not like the milk, although milk had been his favorite drink,{pg}it was with repulsion that he turned away from the basin and crawled back to the room."{pg}{exit "8" 6 9 "fade_b"}
+NAME food1 dialog
+
+DLG n
+{exit "9" 4 6 "wave"}
+NAME exit4 dialog
+
+DLG o
+Gregor could never have guessed what his sister brought,{pg}to find out what he liked she brought him a whole selection of food, all set out on a newspaper.{pg}There were old, half-decayed vegetables, bones from last night's supper covered with a white sauce that had thickened; some raisins and almonds; a piece of cheese that Gregor would have called uneatable two days ago; a dry roll of bread, a buttered roll, and a roll both buttered and salted.{pg}{exit "a" 6 9 "fade_b"}
+NAME food2 dialog
+
+DLG p
+{exit "b" 4 6 "wave"}Gregor had formed the habit of crawling crisscross over the walls and ceiling.{pg}His sister got the idea in her head of giving him as wide a field as possible to crawl in and of removing all the pieces of furniture that hindered him.
+NAME exit5 dialog
+
+DLG q
+"""
+{
+  - {item "familydialog"} == 0 ?
+    Gregor overheard his family in the other room,{pg}"My dear parents," said his sister, "things can't go on like this. Perhaps you don't realize that, but I do. I won't utter my brother's name in the presence of this creature, and so all I say is:{pg}we must try to get rid of it."{pg}"If he could understand us," said his father, "then perhaps we might come to some agreement."
+}
+"""
+NAME familydialog dialog
+
+DLG r
+"""
+{
+  - {item "familydialog"} >= 1 ?
+    Gregor thought of his family with tenderness and love. {pg}The decision that he must disappear was one that he held to even more strongly than his sister, if that were possible.{pg}In this state of vacant and peacecul meditation he remained until the clock tower struck three in the morning.{pg}The first broadening of light in the world outside the window entered his consciousness once more.{pg}Then his head sank to the floor of its own accord and from his nostrils came the last faint flicker of his breath.{pg}{exit "c" 6 9 "fade_b"}
+}
+"""
+NAME photo3 dialog
+
+DLG s
+{exit "d" 0 0 "fade_b"}{end}The End
+NAME exit6 dialog
 
 TUNE 1
 3d,0,0,0,3d5,0,0,0,3l,0,0,0,3s,0,0,0
