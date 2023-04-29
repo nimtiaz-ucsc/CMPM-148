@@ -13,7 +13,7 @@ function generate_monster() {
         "homeVerb":["Hailing", "Coming", "Originating"],
         "homeSentence":["#lowVerb# from #lowHome#", "#highVerb# from #highHome#", "#homeVerb# from #home#"],
         "featureVerb":["brandishes", "flashes", "displays", "flaunts", "waves", "boasts", "readies", "exposes", "readies", "reveals"],
-        "featureAdjective":["fearsome", "impressive", "shiny", "sharp", "wide", "acidic", "toxic", "flaming", "blazing", "burning", "frozen", "frosted", "spiky", "large", "massive", "intimidating", "spindly", "avian", "feline", "canine", "imposing", "snapping"],
+        "featureAdjective":["fearsome", "impressive", "shiny", "sharp", "wide", "acidic", "toxic", "flaming", "blazing", "burning", "frozen", "frosted", "spiky", "large", "massive", "intimidating", "spindly", "avian", "feline", "canine", "imposing", "snapping", "hardened", "sturdy"],
         "featureNoun":["claws", "fangs", "teeth", "wings", "tentacles", "limbs", "arms", "fists", "legs", "hands", "feet", "paws", "tail", "form", "stature", "body", "hooves", "armor"],
         "feature":["#featureAdjective# #featureNoun#", "#featureAdjective#, #featureAdjective# #featureNoun#"],
         "featureSentence":["#featureVerb# its #feature#"],
