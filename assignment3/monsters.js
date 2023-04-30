@@ -12,16 +12,16 @@ function generate_monster() {
         "highVerb":["Falling", "Dropping in", "Descending", "Plummeting", "Tumbling in"],
         "homeVerb":["Hailing", "Coming", "Originating"],
         "homeSentence":["#lowVerb# from #lowHome#", "#highVerb# from #highHome#", "#homeVerb# from #home#"],
-        "featureVerb":["brandishes", "flashes", "displays", "flaunts", "waves", "boasts", "readies", "exposes", "readies", "reveals"],
-        "featureAdjective":["fearsome", "impressive", "shiny", "sharp", "wide", "acidic", "toxic", "flaming", "blazing", "burning", "frozen", "frosted", "spiky", "large", "massive", "intimidating", "spindly", "avian", "feline", "canine", "imposing", "snapping", "hardened", "sturdy"],
+        "featureVerb":["brandishes", "flashes", "displays", "flaunts", "waves around", "boasts", "exposes", "readies", "reveals", "shows off"],
+        "featureAdjective":["fearsome", "impressive", "shiny", "sharp", "wide", "acidic", "toxic", "flaming", "blazing", "burning", "frozen", "frosted", "spiky", "large", "massive", "intimidating", "spindly", "avian", "feline", "canine", "imposing", "snapping", "hardened", "sturdy", "slimy", "slippery", "gooey"],
         "featureNoun":["claws", "fangs", "teeth", "wings", "tentacles", "limbs", "arms", "fists", "legs", "hands", "feet", "paws", "tail", "form", "stature", "body", "hooves", "armor"],
         "feature":["#featureAdjective# #featureNoun#", "#featureAdjective#, #featureAdjective# #featureNoun#"],
         "featureSentence":["#featureVerb# its #feature#"],
-        "monsterAdj":["feared", "respected", "revered", "known", "infamous", "venerated", "notorious", "detested", "hated", "loathed", "despised", "aborred"],
+        "monsterAdj":["feared", "respected", "revered", "known", "infamous", "venerated", "notorious", "detested", "hated", "loathed", "despised", "abhorred"],
         "attackAdj":["sweeping", "paralyzing", "blazing", "flaming", "explosive", "burning", "electric", "crushing", "freezing", "sub-zero", "treacherous", "devastating", "piercing", "toxic", "acidic", "lashing", "ruinous", "splintering", "earth-shattering", "fiery"],
         "attackNoun":["blast", "beam", "slash", "slice", "strike", "flail", "slam", "horde of minions", "ground pound", "bomb", "gas cloud", "projectile", "screech", "sludge", "slime"],
         "attack":["#attackAdj.a# #attackNoun#", "#attackAdj.a#, #attackAdj# #attackNoun#"],
-        "monster":["#homeSentence#, #monsterName# approaches. The pilots scan the monster and watch as it #featureSentence#; #featureSentence#; and #featureSentence#. #monsterName# is #monsterAdj# for its signature attack: #attack#."],
+        "monster":["#homeSentence#, #monsterName# approaches. The pilots scan the monster and watch as it #featureSentence# and #featureSentence#. #monsterName# is #monsterAdj# for its signature attack: #attack#."],
         "origin":["#[monsterName:#name#]monster#"]
     }
     result += grammars.GenerationSimple(monsterData);
