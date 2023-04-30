@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Monster Generator</title>
+
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="tracery.min.js"></script>
+    <script src="input_output.js"></script>
+    <script src="grammar.js"></script>
+    <script src="city.js"></script>
+    <script src="monsters.js"></script>
+    
 </head>
 <body>
-    <a href="monster_generator.html">Monster Generator</a><br>
-    <a href="">Whatever the second generator is gonna be</a>
+    <button onclick="generate_city()">Describe the city</button>
+    <div id="city"></div><br>
+    <button onclick="generate_monster()">Summon a Monster</button>
+    <div id="monster"></div>
 </body>
 </html>

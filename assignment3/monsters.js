@@ -18,13 +18,12 @@ function generate_monster() {
         "feature":["#featureAdjective# #featureNoun#", "#featureAdjective#, #featureAdjective# #featureNoun#"],
         "featureSentence":["#featureVerb# its #feature#"],
         "monsterAdj":["feared", "respected", "revered", "known", "infamous", "venerated", "notorious", "detested", "hated", "loathed", "despised", "aborred"],
-        "attackAdj":["sweeping", "paralyzing", "blazing", "flaming", "explosive", "burning", "electric", "crushing", "freezing", "sub-zero", "treacherous", "devastating", "piercing", "toxic", "acidic", "lashing", "ruinous", "splintering"],
+        "attackAdj":["sweeping", "paralyzing", "blazing", "flaming", "explosive", "burning", "electric", "crushing", "freezing", "sub-zero", "treacherous", "devastating", "piercing", "toxic", "acidic", "lashing", "ruinous", "splintering", "earth-shattering"],
         "attackNoun":["blast", "beam", "slash", "slice", "strike", "flail", "slam", "horde of minions", "ground pound", "bomb", "gas cloud", "projectile", "screech", "sludge", "slime"],
         "attack":["#attackAdj.a# #attackNoun#", "#attackAdj.a#, #attackAdj# #attackNoun#"],
         "monster":["#homeSentence#, #monsterName# approaches. The pilots scan the monster and watch as it #featureSentence#; #featureSentence#; and #featureSentence#. #monsterName# is #monsterAdj# for its signature attack: #attack#."],
         "origin":["#[monsterName:#name#]monster#"]
     }
-    //console.log(monsterData);
     result += grammars.GenerationSimple(monsterData);
     io.write_into_element(result, "monster");
 }
