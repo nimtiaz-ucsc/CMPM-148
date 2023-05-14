@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Time Loop.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Time Loop" startnode="1" creator="Twine" creator-version="2.6.0" format="Harlowe" format-version="3.3.4" ifid="6F08BA56-4197-4524-947B-4D527D95627D" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="startup" color="green"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="200,200" size="100,100">(if: $loops is 0)[On an evening like any other, you](else:)[You] arrive home after a long, stressful day of work. There&#39;s nothing you want to do more than hit the bed and crash for the night.
+<tw-storydata name="Time Loop" startnode="51" creator="Twine" creator-version="2.6.0" format="Harlowe" format-version="3.3.4" ifid="6F08BA56-4197-4524-947B-4D527D95627D" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="startup" color="green"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="200,200" size="100,100">(if: $loops is 0)[On an evening like any other, you](else:)[You] arrive home after a long, stressful day of work. There&#39;s nothing you want to do more than hit the bed and crash for the night.
 
 After a quick shower, a filling meal, and some casual scrolling on social media, you finally do just that, and crawl into bed.
 (set: $hour to 9)
@@ -734,7 +734,11 @@ But you need not worry about that. I think it&#39;s about time you got to enjoy 
 
 And finally, you get to watch a beautiful, otherworldly sunset off in the horizon. As darkness falls, you feel your eyes start to get heavy, and your vision slowly darkens.
 
-It appears it&#39;s time to [[wake up]].</tw-passagedata><tw-passagedata pid="50" name="wake up" tags="" position="1250,2050" size="100,100">THE END</tw-passagedata></tw-storydata>
+It appears it&#39;s time to [[wake up]].</tw-passagedata><tw-passagedata pid="50" name="wake up" tags="" position="1250,2050" size="100,100">THE END
+
+(link: &quot;Replay&quot;)[(reload:)]</tw-passagedata><tw-passagedata pid="51" name="Title" tags="" position="75,200" size="100,100">&#39;&#39;CITY OF DREAMS&#39;&#39;
+
+[[Start]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
