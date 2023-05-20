@@ -1,6 +1,6 @@
 // list which resources you want to track
 
-trackedValues = ["resource1", "resource2"]
+trackedValues = ["ore", "miners", "fossils"]
 
 
 
@@ -19,7 +19,7 @@ time = 0;
       time++;
       for (x in valuesArray) {entry += gameObject[valuesArray[x]] + ", "};
       record.push(entry)
-      console.log(entry)
+      //console.log(entry)
   }, seconds*1000)
 
 

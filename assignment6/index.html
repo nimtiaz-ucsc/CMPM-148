@@ -1,5 +1,5 @@
 <!DOCTYPEhtml><head>
-<title> Game Name</title>
+<title>IncreMining</title>
 
 
 <script src="jquery-1.11.2.min.js"></script>
@@ -32,18 +32,20 @@
 <div class="stage" id="stage1" style="z-index: 1"> 
 
 
-<h1> <span id=era>Name</span></h1> 
+<h1> <span id=era>Humble Beginnings</span></h1> 
 
-  <button onclick=game.swichPanels("panel1") id="showPanel1"> 1</button>
-  <button onclick=game.swichPanels("panel2") id="showPanel2"> 2</button>
-  <button onclick=game.swichPanels("panel3") id="showPanel3"> 3</button>
+  <button onclick=game.switchPanels("panel1") id="showPanel1"> 1</button>
+  <button onclick=game.switchPanels("panel2") id="showPanel2"> 2</button>
+  <button onclick=game.switchPanels("panel3") id="showPanel3"> 3</button>
 
   <div class="panel" id="panel1"> 
     <table>
     <tr> <td>
     <table>
-    <tr><td> Resource1</td> <td> </td> <td class="resource1Number"></td><td><button onclick=game.gainResource1()> Collect Resource1 </button></td></tr>
-    <tr id="resource2Row"><td> Resource2</td> <td></td> <td class="resource2Number"></td><td><button onclick=game.gainResource2()> Spawn Collector</button></td><td>Cost 5 Resource1</td></tr>
+    <tr><td>Ore:</td> <td> </td> <td class="oreNumber"></td><td><button onclick=game.gainOre()> Mine for Ore </button></td></tr>
+    <tr id="minerRow"><td>Mining Rigs: </td> <td></td> <td class="minerNumber"></td><td><button onclick=game.gainMiners()>Build a Mining Rig</button></td><td>Cost: 10 Ore</td></tr><br>
+    <tr id="fossilRow"><td>Fossils: </td> <td></td> <td class="fossilNumber"></td><td><button onclick=game.gainFossils()>Clean a Fossil</button></td><td>Cost: 1 Ore</td></tr>
+    <tr id="cleanerRow"><td>Fossil Cleaners: </td> <td></td> <td class="cleanerNumber"></td><td><button onclick=game.gainCleaners()>Build a Fossil Cleaner</button></td><td>Cost: 20 Ore</td></tr>
     </table>
 
 

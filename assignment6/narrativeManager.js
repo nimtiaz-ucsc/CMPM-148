@@ -10,24 +10,37 @@ const narrativeManager = class {
   this.beats = [
   {
     triggered: false,
-    test: function(data){return data.resource1 >= 10}, 
-    unlock:function(){io.showElement("resource2Row")}, 
+    test: function(data){return data.ore >= 10}, 
+    unlock:function(){io.showElement("minerRow")}, 
     report: function(){
-      io.appendIntoElement("You have progressed far enough to discover R2", "reports");
-      io.writeIntoElement ("Updated Name", "era");
+      io.appendIntoElement("You have enough ore to build a mining rig!", "reports");
+      io.writeIntoElement ("Industrial Revolution", "era");
       }
   },
   {
     triggered: false,
-    test: function(data){return data.resource2 >= 10}, 
-    unlock:function(){io.showElement("showPanel2")},  
-    report: function(){io.appendIntoElement("You unlocked a new dimension of management", "reports");}
+    test: function(data){return data.ore >= 100}, 
+    unlock:function(){io.showElement("fossilRow")},  
+    report: function(){
+        io.appendIntoElement("You dug up a fossil! Try cleaning up some of the ore you dug out to find more.", "reports");
+        io.writeIntoElement("Eureka!", "era");
+    }
   },
+  {
+    triggered: false,
+    test: function(data){return data.fossils >= 20}, 
+    unlock:function(){io.showElement("cleanerRow")},  
+    report: function(){
+        io.appendIntoElement("You can now build automated fossil cleaners!", "reports");
+    }
+  }
   ]
   }
   
   setup(){
-    io.hideElement("resource2Row")
+    io.hideElement("minerRow")
+    io.hideElement("fossilRow")
+    io.hideElement("cleanerRow")
     io.hideElement("showPanel2")
     io.hideElement("showPanel3")
   }
