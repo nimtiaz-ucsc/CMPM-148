@@ -20,7 +20,7 @@
   border: 1px solid black; 
   height: 100px; 
   width: 50%;
-  margins:auto;
+  margin:auto;
   display: inline-block;
 }
 </style>
@@ -28,15 +28,13 @@
 
 </head>
 <body>
-<div id="reports" style=> </div> 
-<div class="stage" id="stage1" style="z-index: 1"> 
-
+<div id="reports" style=> </div>
 
 <h1> <span id=era>Humble Beginnings</span></h1> 
 
-  <button onclick=game.switchPanels("panel1") id="showPanel1"> 1</button>
-  <button onclick=game.switchPanels("panel2") id="showPanel2"> 2</button>
-  <button onclick=game.switchPanels("panel3") id="showPanel3"> 3</button>
+  <button onclick="game.switchPanels('panel1')" id="showPanel1"> 1</button>
+  <button onclick="game.switchPanels('panel2')" id="showPanel2"> 2</button>
+  <button onclick="game.switchPanels('panel3')" id="showPanel3"> 3</button>
 
   <div class="panel" id="panel1"> 
     <table>
@@ -47,30 +45,11 @@
     <tr id="fossilRow"><td>Fossils: </td> <td></td> <td class="fossilNumber"></td><td><button onclick=game.gainFossils()>Clean a Fossil</button></td><td>Cost: 1 Ore</td></tr>
     <tr id="cleanerRow"><td>Fossil Cleaners: </td> <td></td> <td class="cleanerNumber"></td><td><button onclick=game.gainCleaners()>Build a Fossil Cleaner</button></td><td>Cost: 20 Ore</td></tr>
     </table>
-
-
   </div>
 
+  <div class="panel" id="panel2">Panel 2</div>
 
-
-<!-- delete the following 2 panels if you structuring with sequential stages -->
-  <div class="panel"  id="panel2">
-  <h1> Panel 2</h1>
-
-   </div>
-
-  <div class="panel"  id="panel3"> <h1> Panel 3</div>
-  </div>
-
-<!-- delete the following 2 stages if you are only doing panels -->
-<div class="stage" id="stage2" style="z-index: 1"> <h1>Stage 2</h1><h2>Subtitle</h2></div>
-<div class="panel"  id="panel2-1">
-</div>
-
-<div class="stage" id="stage3" style="z-index: 1"> <h1>Stage 3</h1><h2>Subtitle</h2>
-<div class="panel"  id="panel3-1">
-</div>
-
+  <div class="panel" id="panel3">Panel 3</div>
 
 </body>
 </html>

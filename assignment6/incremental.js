@@ -2,28 +2,17 @@ const GameInstance = class {
 constructor() {
     this.narrativeManager = new narrativeManager(this)
     
-    this.stages = ["stage1", "stage2", "stage3"];
-    this.currentStage = "stage1"; 
-    this.panels = {
-    "stage1": ["panel1", "panel2", "panel3"],
-    "stage2": ["panel2-1"],
-    "stage3": ["panel3-1"]
-    }
+    this.panels = ["panel1", "panel2", "panel3"]
     this.currentPanel = "panel1";
-
-
 
     this.ore = 0;
     this.miners = 0;
     this.fossils = 1;
     this.cleaners = 0;
     
-    
-    
     this.collectorsProtected = 0;
     this.findersProtected = 0;
     this.gardenCollectors = 0;
-    
 }
 
 
@@ -88,8 +77,6 @@ updateDisplay(){
 $( document ).ready(function() {
 game = new GameInstance();
 game.narrativeManager.setup();
-
-io.showStage(game); 
 game.updateDisplay()
 
 startRecording(game);

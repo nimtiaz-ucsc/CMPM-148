@@ -11,7 +11,7 @@ const narrativeManager = class {
   {
     triggered: false,
     test: function(data){return data.ore >= 10}, 
-    unlock:function(){io.showElement("minerRow")}, 
+    unlock:function(){io.showElement("minerRow");}, 
     report: function(){
       io.appendIntoElement("You have enough ore to build a mining rig!", "reports");
       io.writeIntoElement ("Industrial Revolution", "era");
@@ -41,8 +41,8 @@ const narrativeManager = class {
     io.hideElement("minerRow")
     io.hideElement("fossilRow")
     io.hideElement("cleanerRow")
-    io.hideElement("showPanel2")
-    io.hideElement("showPanel3")
+    //io.hideElement("showPanel2")
+    //io.hideElement("showPanel3")
   }
 
 
