@@ -10,7 +10,7 @@ const narrativeManager = class {
   this.beats = [
   {
     triggered: false,
-    test: function(data){return data.ore >= 10}, 
+    test: function(data){return data.ore >= 1}, 
     unlock:function(){io.showElement("minerRow");}, 
     report: function(){
       io.appendIntoElement("You have enough ore to build a mining rig!", "reports");
@@ -19,7 +19,7 @@ const narrativeManager = class {
   },
   {
     triggered: false,
-    test: function(data){return data.ore >= 100}, 
+    test: function(data){return data.ore >= 2}, 
     unlock:function(){io.showElement("fossilRow")},  
     report: function(){
         io.appendIntoElement("You dug up a fossil! Try cleaning up some of the ore you dug out to find more.", "reports");
@@ -28,10 +28,19 @@ const narrativeManager = class {
   },
   {
     triggered: false,
-    test: function(data){return data.fossils >= 20}, 
+    test: function(data){return data.fossils >= 2}, 
     unlock:function(){io.showElement("cleanerRow")},  
     report: function(){
         io.appendIntoElement("You can now build automated fossil cleaners!", "reports");
+    }
+  },
+  {
+    triggered: false,
+    test: function(data){return data.fossils >= 3}, 
+    unlock:function(){io.showElement("showPanel2")},  
+    report: function(){
+        io.appendIntoElement("You have unlocked Paleontology! Time to get to work on those fossils.", "reports");
+        //io.writeIntoElement("");
     }
   }
   ]
@@ -42,7 +51,18 @@ const narrativeManager = class {
     io.hideElement("fossilRow")
     io.hideElement("cleanerRow")
     //io.hideElement("showPanel2")
-    //io.hideElement("showPanel3")
+    io.hideElement("showPanel3")
+
+    io.hideElement("Tyrannosaurus")
+    io.hideElement("Velociraptor")
+    io.hideElement("Stegosaurus")
+    io.hideElement("Spinosaurus")
+    io.hideElement("Brachiosaurus")
+    io.hideElement("Brontosaurus")
+    io.hideElement("Apatosaurus")
+    io.hideElement("Archaeopteryx")
+    io.hideElement("Pteranodon")
+    io.hideElement("Triceratops")
   }
 
 

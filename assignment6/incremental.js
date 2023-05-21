@@ -3,23 +3,47 @@ constructor() {
     this.narrativeManager = new narrativeManager(this)
     
     this.panels = ["panel1", "panel2", "panel3"]
-    this.currentPanel = "panel1";
+    this.currentPanel = "panel2";
 
     this.ore = 0;
     this.miners = 0;
     this.fossils = 1;
     this.cleaners = 0;
-    
-    this.collectorsProtected = 0;
-    this.findersProtected = 0;
-    this.gardenCollectors = 0;
+
+    this.dinosaurs = [
+        "Tyrannosaurus",
+        "Velociraptor",
+        "Stegosaurus",
+        "Spinosaurus",
+        "Brachiosaurus",
+        "Brontosaurus",
+        "Apatosaurus",
+        "Archaeopteryx",
+        "Pteranodon",
+        "Triceratops"
+    ]   
+
+    this.Tyrannosaurus = 0;
+    this.Velociraptor = 0;
+    this.Stegosaurus = 0;
+    this.Spinosaurus = 0;
+    this.Brachiosaurus = 0;
+    this.Brontosaurus = 0;
+    this.Apatosaurus = 0;
+    this.Archaeopteryx = 0;
+    this.Pteranodon = 0;
+    this.Triceratops = 0;
 }
 
 
 
 
 // the following functions are to be called from buttons in the index.html
-gainOre(){ this.ore++; this.updateDisplay();}
+gainOre(){ 
+    this.ore++; 
+    this.updateDisplay();
+}
+
 gainMiners(){ 
     if (this.ore >= 10) {
         this.miners++; 
@@ -30,7 +54,8 @@ gainMiners(){
 
 gainFossils(){
     if (this.ore >= 1) {
-        this.fossils += 1; 
+        this.ore--
+        this.fossils++; 
         this.updateDisplay();
     }
 }
@@ -42,6 +67,32 @@ gainCleaners(){
     }
 }
 
+gainDino() {
+    if (this.fossils >= 0) {
+        //this.fossils -= 100;
+
+        if (Math.floor(Math.random()*100) <= 49) {
+            io.appendIntoElement("Did not find any meaningful remains...", "reports");
+        } else {
+            this.updateDino(Math.floor(Math.random() * 10));
+        }
+
+    }
+}
+
+updateDino(dino) {
+    this.varString = "this." + this.dinosaurs[dino];
+
+    eval(this.varString + "++");
+    io.appendIntoElement("Found a " + this.dinosaurs[dino] + " fossil!", "reports");
+    io.writeValueIntoClass(eval(this.varString), this.dinosaurs[dino] + "Number");
+    
+    if (eval(this.varString) == 1) {
+        io.showElement(this.dinosaurs[dino]);
+    }
+
+}
+
 runMinerWork(){
     if (this.miners > 0) {
         this.ore += (Math.floor(Math.random()*this.miners) + 1)
@@ -50,9 +101,9 @@ runMinerWork(){
 
 runCleanerWork(){
     if (this.cleaners > 0 && this.ore >= this.cleaners) {
-        console.log('hi')
-        this.ore -= this.cleaners;
-        this.fossils += (Math.floor(Math.random()*this.cleaners) + 1)
+        this.yield = Math.floor(Math.random()*this.cleaners) + 1
+        this.ore -= this.yield;
+        this.fossils += this.yield;
     }
 }
 
@@ -76,6 +127,7 @@ updateDisplay(){
 // this function forom JQuery waits until the web page is fully loaded before triggering the start of the game
 $( document ).ready(function() {
 game = new GameInstance();
+game.switchPanels(game.currentPanel)
 game.narrativeManager.setup();
 game.updateDisplay()
 

@@ -1,7 +1,6 @@
 <!DOCTYPEhtml><head>
 <title>IncreMining</title>
 
-
 <script src="jquery-1.11.2.min.js"></script>
 <script src="input_output.js"></script>
 <script src="mathUtil.js"></script>
@@ -32,13 +31,11 @@
 
 <h1> <span id=era>Humble Beginnings</span></h1> 
 
-  <button onclick="game.switchPanels('panel1')" id="showPanel1"> 1</button>
-  <button onclick="game.switchPanels('panel2')" id="showPanel2"> 2</button>
-  <button onclick="game.switchPanels('panel3')" id="showPanel3"> 3</button>
+  <button onclick="game.switchPanels('panel1')" id="showPanel1">Excavation</button>
+  <button onclick="game.switchPanels('panel2')" id="showPanel2">Paleontology</button>
+  <button onclick="game.switchPanels('panel3')" id="showPanel3">???</button>
 
-  <div class="panel" id="panel1"> 
-    <table>
-    <tr> <td>
+  <div class="panel" id="panel1">
     <table>
     <tr><td>Ore:</td> <td> </td> <td class="oreNumber"></td><td><button onclick=game.gainOre()> Mine for Ore </button></td></tr>
     <tr id="minerRow"><td>Mining Rigs: </td> <td></td> <td class="minerNumber"></td><td><button onclick=game.gainMiners()>Build a Mining Rig</button></td><td>Cost: 10 Ore</td></tr><br>
@@ -47,9 +44,26 @@
     </table>
   </div>
 
-  <div class="panel" id="panel2">Panel 2</div>
+<div class="panel" id="panel2">
+    <table><br>
+        <tr><td>Ore: </td> <td></td> <td class="oreNumber"></td></tr>
+        <tr><td>Fossils: </td> <td></td> <td class="fossilNumber"></td></tr><br>
+        <tr><td><h3>Dinosaur Collection: <button onclick=game.gainDino()>Inspect Fossil</button></h3></td><td> Cost: 100 Fossils</td><td></td></tr>
+        <tr><td><h4>Fossils identified:</h4></td><td></td><td></td></tr>
+        <tr id="Tyrannosaurus"><td>Tyrannosaurus: </td> <td></td> <td class="TyrannosaurusNumber"></td></tr>
+        <tr id="Velociraptor"><td>Velociraptor: </td> <td></td> <td class="VelociraptorNumber"></td></tr>
+        <tr id="Stegosaurus"><td>Stegosaurus: </td> <td></td> <td class="StegosaurusNumber"></td></tr>
+        <tr id="Spinosaurus"><td>Spinosaurus: </td> <td></td> <td class="SpinosaurusNumber"></td></tr>
+        <tr id="Brachiosaurus"><td>Brachiosaurus: </td> <td></td> <td class="BrachiosaurusNumber"></td></tr>
+        <tr id="Brontosaurus"><td>Brontosaurus: </td> <td></td> <td class="BrontosaurusNumber"></td></tr>
+        <tr id="Apatosaurus"><td>Apatosaurus: </td> <td></td> <td class="ApatosaurusNumber"></td></tr>
+        <tr id="Archaeopteryx"><td>Archaeopteryx: </td> <td></td> <td class="ArchaeopteryxNumber"></td></tr>
+        <tr id="Pteranodon"><td>Pteranodon: </td> <td></td> <td class="PteranodonNumber"></td></tr>
+        <tr id="Triceratops"><td>Triceratops: </td> <td></td> <td class="TriceratopsNumber"></td></tr>
+    </table>
+</div>
 
-  <div class="panel" id="panel3">Panel 3</div>
+<div class="panel"id="panel3"><h1>HELLO AGAIN</h1></div>
 
 </body>
 </html>

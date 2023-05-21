@@ -1,6 +1,6 @@
 // list which resources you want to track
 
-trackedValues = ["ore", "miners", "fossils"]
+trackedValues = ["ore", "miners", "fossils", "cleaners"]
 
 
 
