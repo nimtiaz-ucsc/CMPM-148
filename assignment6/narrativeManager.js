@@ -10,7 +10,7 @@ const narrativeManager = class {
   this.beats = [
   {
     triggered: false,
-    test: function(data){return data.ore >= 10}, 
+    test: function(data){return data.ore >= 1}, 
     unlock:function(){io.showElement("minerRow");}, 
     report: function(){
       io.appendIntoElement("You have enough ore to build a mining rig!", "reports");
@@ -19,7 +19,7 @@ const narrativeManager = class {
   },
   {
     triggered: false,
-    test: function(data){return data.ore >= 100}, 
+    test: function(data){return data.ore >= 2}, 
     unlock:function(){io.showElement("fossilRow")},  
     report: function(){
         io.appendIntoElement("You dug up a fossil! Try cleaning up some of the ore you dug out to find more.", "reports");
@@ -28,7 +28,7 @@ const narrativeManager = class {
   },
   {
     triggered: false,
-    test: function(data){return data.fossils >= 20}, 
+    test: function(data){return data.fossils >= 2}, 
     unlock:function(){io.showElement("cleanerRow")},  
     report: function(){
         io.appendIntoElement("You can now build automated fossil cleaners!", "reports");
@@ -36,11 +36,20 @@ const narrativeManager = class {
   },
   {
     triggered: false,
-    test: function(data){return data.fossils >= 200}, 
+    test: function(data){return data.fossils >= 3}, 
     unlock:function(){io.showElement("showPanel2")},  
     report: function(){
         io.appendIntoElement("You have unlocked Paleontology! Time to get to work on those fossils.", "reports");
         //io.writeIntoElement("");
+    }
+  },
+  {
+    triggered: false,
+    test: function(data){return data.dinoTotal >= 5}, 
+    unlock:function(){io.showElement("showPanel3")},  
+    report: function(){
+        io.appendIntoElement("You have collected enough specimens for the next stage of our project. Using their fossilized remains, we can now revive them, and engage them in battle!", "reports");
+        io.writeIntoElement("Let Them Fight.", "era");
     }
   }
   ]
@@ -58,11 +67,22 @@ const narrativeManager = class {
     io.hideElement("Stegosaurus")
     io.hideElement("Spinosaurus")
     io.hideElement("Brachiosaurus")
-    io.hideElement("Brontosaurus")
+    io.hideElement("Ankylosaurus")
     io.hideElement("Apatosaurus")
     io.hideElement("Archaeopteryx")
     io.hideElement("Pteranodon")
     io.hideElement("Triceratops")
+
+    io.hideElement("TyrannosaurusBattle")
+    io.hideElement("VelociraptorBattle")
+    io.hideElement("StegosaurusBattle")
+    io.hideElement("SpinosaurusBattle")
+    io.hideElement("BrachiosaurusBattle")
+    io.hideElement("AnkylosaurusBattle")
+    io.hideElement("ApatosaurusBattle")
+    io.hideElement("ArchaeopteryxBattle")
+    io.hideElement("PteranodonBattle")
+    io.hideElement("TriceratopsBattle")
   }
 
 

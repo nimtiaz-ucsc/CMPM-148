@@ -33,7 +33,7 @@
 
   <button onclick="game.switchPanels('panel1')" id="showPanel1">Excavation</button>
   <button onclick="game.switchPanels('panel2')" id="showPanel2">Paleontology</button>
-  <button onclick="game.switchPanels('panel3')" id="showPanel3">???</button>
+  <button onclick="game.switchPanels('panel3')" id="showPanel3">Combat</button>
 
   <div class="panel" id="panel1">
     <table>
@@ -46,24 +46,39 @@
 
 <div class="panel" id="panel2">
     <table><br>
-        <tr><td>Ore: </td> <td></td> <td class="oreNumber"></td></tr>
-        <tr><td>Fossils: </td> <td></td> <td class="fossilNumber"></td></tr><br>
+        <tr><td>Ore: <td class="oreNumber"></td></td></tr>
+        <tr><td>Fossils: <td class="fossilNumber"></td></td></tr>
         <tr><td><h3>Dinosaur Collection: <button onclick=game.gainDino()>Inspect Fossil</button></h3></td><td> Cost: 100 Fossils</td><td></td></tr>
-        <tr><td><h4>Fossils identified:</h4></td><td></td><td></td></tr>
-        <tr id="Tyrannosaurus"><td>Tyrannosaurus: </td> <td></td> <td class="TyrannosaurusNumber"></td></tr>
-        <tr id="Velociraptor"><td>Velociraptor: </td> <td></td> <td class="VelociraptorNumber"></td></tr>
-        <tr id="Stegosaurus"><td>Stegosaurus: </td> <td></td> <td class="StegosaurusNumber"></td></tr>
-        <tr id="Spinosaurus"><td>Spinosaurus: </td> <td></td> <td class="SpinosaurusNumber"></td></tr>
-        <tr id="Brachiosaurus"><td>Brachiosaurus: </td> <td></td> <td class="BrachiosaurusNumber"></td></tr>
-        <tr id="Brontosaurus"><td>Brontosaurus: </td> <td></td> <td class="BrontosaurusNumber"></td></tr>
-        <tr id="Apatosaurus"><td>Apatosaurus: </td> <td></td> <td class="ApatosaurusNumber"></td></tr>
-        <tr id="Archaeopteryx"><td>Archaeopteryx: </td> <td></td> <td class="ArchaeopteryxNumber"></td></tr>
-        <tr id="Pteranodon"><td>Pteranodon: </td> <td></td> <td class="PteranodonNumber"></td></tr>
-        <tr id="Triceratops"><td>Triceratops: </td> <td></td> <td class="TriceratopsNumber"></td></tr>
+        <tr><td><h4>Dinosaurs identified: <td class="dinoNumber"></td></h4></td><td></td><td></td></tr>
+        <tr><td><h4>Fossils collected: </h4></td><td></td><td></td></tr>
+        <tr id="Tyrannosaurus"><td>Tyrannosaurus: <td class="TyrannosaurusNumber"></td></td></tr>
+        <tr id="Velociraptor"><td>Velociraptor: <td class="VelociraptorNumber"></td></td></tr>
+        <tr id="Stegosaurus"><td>Stegosaurus: <td class="StegosaurusNumber"></td></td></tr>
+        <tr id="Spinosaurus"><td>Spinosaurus: <td class="SpinosaurusNumber"></td></td></tr>
+        <tr id="Brachiosaurus"><td>Brachiosaurus: <td class="BrachiosaurusNumber"></td></td></tr>
+        <tr id="Ankylosaurus"><td>Ankylosaurus: <td class="AnkylosaurusNumber"></td></td></tr>
+        <tr id="Apatosaurus"><td>Apatosaurus: <td class="ApatosaurusNumber"></td></td></tr>
+        <tr id="Archaeopteryx"><td>Archaeopteryx: <td class="ArchaeopteryxNumber"></td></td></tr>
+        <tr id="Pteranodon"><td>Pteranodon: <td class="PteranodonNumber"></td></td></tr>
+        <tr id="Triceratops"><td>Triceratops: <td class="TriceratopsNumber"></td></td></tr>
     </table>
 </div>
 
-<div class="panel"id="panel3"><h1>HELLO AGAIN</h1></div>
+<div class="panel"id="panel3">
+    <table>
+        <tr><h3>Available Combatants:</h3></tr>
+        <tr id="TyrannosaurusBattle"><td>Tyrannosaurus <td></td><td class="TyrannosaurusLevel"></td></td></tr>
+        <tr id="VelociraptorBattle"><td>Velociraptor <td></td><td class="VelociraptorLevel"></td></td></tr>
+        <tr id="StegosaurusBattle"><td>Stegosaurus <td></td><td class="StegosaurusLevel"></td></td></tr>
+        <tr id="SpinosaurusBattle"><td>Spinosaurus <td></td><td class="SpinosaurusLevel"></td></td></tr>
+        <tr id="BrachiosaurusBattle"><td>Brachiosaurus <td></td><td class="BrachiosaurusLevel"></td></td></tr>
+        <tr id="AnkylosaurusBattle"><td>Ankylosaurus <td></td><td class="AnkylosaurusLevel"></td></td></tr>
+        <tr id="ApatosaurusBattle"><td>Apatosaurus <td></td><td class="ApatosaurusLevel"></td></td></tr>
+        <tr id="ArchaeopteryxBattle"><td>Archaeopteryx <td></td><td class="ArchaeopteryxLevel"></td></td></tr>
+        <tr id="PteranodonBattle"><td>Pteranodon <td></td><td class="PteranodonLevel"></td></td></tr>
+        <tr id="TriceratopsBattle"><td>Triceratops <td></td><td class="TriceratopsLevel"></td></td></tr>
+    </table>
+</div>
 
 </body>
 </html>

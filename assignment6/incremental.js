@@ -3,7 +3,7 @@ constructor() {
     this.narrativeManager = new narrativeManager(this)
     
     this.panels = ["panel1", "panel2", "panel3"]
-    this.currentPanel = "panel2";
+    this.currentPanel = "panel1";
 
     this.ore = 0;
     this.miners = 0;
@@ -16,19 +16,34 @@ constructor() {
         "Stegosaurus",
         "Spinosaurus",
         "Brachiosaurus",
-        "Brontosaurus",
+        "Ankylosaurus",
         "Apatosaurus",
         "Archaeopteryx",
         "Pteranodon",
         "Triceratops"
-    ]   
+    ]
+
+    this.parts = [
+        " skull",
+        " limb",
+        " leg",
+        " toe",
+        " rib",
+        " tail",
+        " spine",
+        " tooth",
+        " bone"
+
+    ]
+    
+    this.dinoTotal = 0;
 
     this.Tyrannosaurus = 0;
     this.Velociraptor = 0;
     this.Stegosaurus = 0;
     this.Spinosaurus = 0;
     this.Brachiosaurus = 0;
-    this.Brontosaurus = 0;
+    this.Ankylosaurus = 0;
     this.Apatosaurus = 0;
     this.Archaeopteryx = 0;
     this.Pteranodon = 0;
@@ -84,11 +99,15 @@ updateDino(dino) {
     this.varString = "this." + this.dinosaurs[dino];
 
     eval(this.varString + "++");
-    io.appendIntoElement("Found a " + this.dinosaurs[dino] + " fossil!", "reports");
+    io.appendIntoElement("Found a " + this.dinosaurs[dino] + this.parts[Math.floor(Math.random()*this.parts.length)] + "!", "reports");
     io.writeValueIntoClass(eval(this.varString), this.dinosaurs[dino] + "Number");
+    io.writeValueIntoClass("Lv. " + eval(this.varString), this.dinosaurs[dino] + "Level");
     
     if (eval(this.varString) == 1) {
         io.showElement(this.dinosaurs[dino]);
+        io.showElement(this.dinosaurs[dino]+"Battle");
+        this.dinoTotal++;
+        this.updateDisplay();
     }
 
 }
@@ -119,6 +138,7 @@ updateDisplay(){
     io.writeValueIntoClass(this.miners, "minerNumber")
     io.writeValueIntoClass(this.fossils, "fossilNumber")
     io.writeValueIntoClass(this.cleaners, "cleanerNumber")
+    io.writeValueIntoClass(this.dinoTotal + "/10", "dinoNumber");
 }
 
 };
