@@ -1,21 +1,17 @@
 function runArenaMinigame() {
-    var canvas = document.getElementById("arena");
-    var context = canvas.getContext("2d");
-    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    game.context.clearRect(0, 0, game.canvas.width, game.canvas.height);
+    
+    var dinoSize = 64;
+    var currentDino = document.getElementById("dinoSelect").value;
+
+    game.context.drawImage(document.getElementById(currentDino + "Sprite"), game.dinoX - (dinoSize/2), game.dinoY - (dinoSize/2), dinoSize, dinoSize);
+    game.context.font = "16px Times New Roman";
+    game.context.fillText("Lv. " + eval("game."+currentDino), game.dinoX - (dinoSize/2), game.dinoY - (dinoSize/2));
 }
 
-testCommand = function(mouseClick) {
-    var canvas = document.getElementById("arena");
-    var context = canvas.getContext("2d");
-    context.clearRect(0, 0, canvas.width, canvas.height);
+moveDino = function(mouseClick) {
 
-    let clickX = mouseClick.offsetX;
-    let clickY = mouseClick.offsetY;
-
-    let dimension = 100
-
-    context.drawImage(document.getElementById("dinoSprite"), clickX - (dimension/2), clickY - (dimension/2), dimension, dimension);
-
-    console.log(document.getElementById("dinoSelect").value)
-
+    game.dinoX = mouseClick.offsetX;
+    game.dinoY = mouseClick.offsetY;  
 }

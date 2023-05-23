@@ -28,7 +28,17 @@
 </head>
 <body>
 <div id="reports" style=> </div>
-<img src="dinoSprite.png"  style="width:50px; height:50px;" id="dinoSprite" hidden>
+
+<img src="Tyrannosaurus.png" id="TyrannosaurusSprite" hidden>
+<img src="Velociraptor.png" id="VelociraptorSprite" hidden>
+<img src="Stegosaurus.png" id="StegosaurusSprite" hidden>
+<img src="Spinosaurus.png" id="SpinosaurusSprite" hidden>
+<img src="Brachiosaurus.png" id="BrachiosaurusSprite" hidden>
+<img src="Ankylosaurus.png" id="AnkylosaurusSprite" hidden>
+<img src="Apatosaurus.png" id="ApatosaurusSprite" hidden>
+<img src="Archaeopteryx.png" id="ArchaeopteryxSprite" hidden>
+<img src="Pteranodon.png" id="PteranodonSprite" hidden>
+<img src="Triceratops.png" id="TriceratopsSprite" hidden>
 
 <h1> <span id=era>Humble Beginnings</span></h1> 
 
@@ -78,10 +88,11 @@
         <tr id="ArchaeopteryxBattle"><td>Archaeopteryx <td class="ArchaeopteryxLevel"></td></td></tr>
         <tr id="PteranodonBattle"><td>Pteranodon <td class="PteranodonLevel"></td></td></tr>
         <tr id="TriceratopsBattle"><td>Triceratops <td class="TriceratopsLevel"></td></td></tr>
+    </table>
+    <table>
         <tr><td><h3 style="text-align: center">The Arena</h3></td></tr><br>
-        <tr><td><select name="dinoSelect" id="dinoSelect">
-        </select></td></tr>
-        <td><canvas width=500 height=500 style="background-color:white;outline:black 5px solid;" id="arena" onclick=testCommand(event)> </canvas> </td>
+        <tr><td>Choose active dino: <select name="dinoSelect" id="dinoSelect"></select></td></tr><br>
+        <td><canvas width=500 height=500 style="background-color:white;outline:black 5px solid;" id="arena" onclick=moveDino(event)> </canvas> </td>
     </table>
 </div>
 

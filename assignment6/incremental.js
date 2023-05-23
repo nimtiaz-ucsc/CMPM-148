@@ -37,6 +37,7 @@ constructor() {
     ]
     
     this.dinoTotal = 0;
+    this.highestLevel = 0;
 
     this.Tyrannosaurus = 0;
     this.Velociraptor = 0;
@@ -48,10 +49,12 @@ constructor() {
     this.Archaeopteryx = 0;
     this.Pteranodon = 0;
     this.Triceratops = 0;
+
+    this.canvas = document.getElementById("arena");
+    this.context = this.canvas.getContext("2d");
+    this.dinoX = this.canvas.width/2;
+    this.dinoY = this.canvas.height/2;
 }
-
-
-
 
 // the following functions are to be called from buttons in the index.html
 gainOre(){ 
@@ -102,6 +105,8 @@ updateDino(dino) {
     io.appendIntoElement("Found a " + this.dinosaurs[dino] + this.parts[Math.floor(Math.random()*this.parts.length)] + "!", "reports");
     io.writeValueIntoClass(eval(this.varString), this.dinosaurs[dino] + "Number");
     io.writeValueIntoClass("Lv. " + eval(this.varString), this.dinosaurs[dino] + "Level");
+
+    if (eval(this.varString) > this.highestLevel) {this.highestLevel = eval(this.varString);}
     
     if (eval(this.varString) == 1) {
         io.showElement(this.dinosaurs[dino]);
@@ -153,6 +158,7 @@ updateDisplay(){
 // this function forom JQuery waits until the web page is fully loaded before triggering the start of the game
 $( document ).ready(function() {
 game = new GameInstance();
+//arena = new ArenaMinigame();
 game.switchPanels(game.currentPanel)
 game.narrativeManager.setup();
 game.updateDisplay()
