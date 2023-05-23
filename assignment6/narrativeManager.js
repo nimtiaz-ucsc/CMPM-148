@@ -45,10 +45,10 @@ const narrativeManager = class {
   },
   {
     triggered: false,
-    test: function(data){return data.dinoTotal >= 5}, 
+    test: function(data){return data.dinoTotal >= 1}, 
     unlock:function(){io.showElement("showPanel3")},  
     report: function(){
-        io.appendIntoElement("You have collected enough specimens for the next stage of our project. Using their fossilized remains, we can now revive them, and engage them in battle!", "reports");
+        io.appendIntoElement("You have collected enough specimens for the next stage of our project. Using their fossilized remains, we can now revive them, and engage them in battle! (As nature intended.)", "reports");
         io.writeIntoElement("Let Them Fight.", "era");
     }
   }

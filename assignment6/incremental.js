@@ -106,6 +106,12 @@ updateDino(dino) {
     if (eval(this.varString) == 1) {
         io.showElement(this.dinosaurs[dino]);
         io.showElement(this.dinosaurs[dino]+"Battle");
+
+        var select = document.getElementById("dinoSelect");
+        var option = document.createElement("option");
+        option.text = this.dinosaurs[dino]
+        select.add(option, dino);
+
         this.dinoTotal++;
         this.updateDisplay();
     }

@@ -4,7 +4,7 @@
 <script src="jquery-1.11.2.min.js"></script>
 <script src="input_output.js"></script>
 <script src="mathUtil.js"></script>
-
+<script src="arenaMinigame.js"></script>
 <script src="narrativeManager.js"></script>
 <script src="incremental.js"></script>
 <script src="statAnalysis.js"></script>
@@ -28,6 +28,7 @@
 </head>
 <body>
 <div id="reports" style=> </div>
+<img src="dinoSprite.png"  style="width:50px; height:50px;" id="dinoSprite" hidden>
 
 <h1> <span id=era>Humble Beginnings</span></h1> 
 
@@ -67,16 +68,20 @@
 <div class="panel"id="panel3">
     <table>
         <tr><h3>Available Combatants:</h3></tr>
-        <tr id="TyrannosaurusBattle"><td>Tyrannosaurus <td></td><td class="TyrannosaurusLevel"></td></td></tr>
-        <tr id="VelociraptorBattle"><td>Velociraptor <td></td><td class="VelociraptorLevel"></td></td></tr>
-        <tr id="StegosaurusBattle"><td>Stegosaurus <td></td><td class="StegosaurusLevel"></td></td></tr>
-        <tr id="SpinosaurusBattle"><td>Spinosaurus <td></td><td class="SpinosaurusLevel"></td></td></tr>
-        <tr id="BrachiosaurusBattle"><td>Brachiosaurus <td></td><td class="BrachiosaurusLevel"></td></td></tr>
-        <tr id="AnkylosaurusBattle"><td>Ankylosaurus <td></td><td class="AnkylosaurusLevel"></td></td></tr>
-        <tr id="ApatosaurusBattle"><td>Apatosaurus <td></td><td class="ApatosaurusLevel"></td></td></tr>
-        <tr id="ArchaeopteryxBattle"><td>Archaeopteryx <td></td><td class="ArchaeopteryxLevel"></td></td></tr>
-        <tr id="PteranodonBattle"><td>Pteranodon <td></td><td class="PteranodonLevel"></td></td></tr>
-        <tr id="TriceratopsBattle"><td>Triceratops <td></td><td class="TriceratopsLevel"></td></td></tr>
+        <tr id="TyrannosaurusBattle"><td>Tyrannosaurus <td class="TyrannosaurusLevel"></td></td></tr>
+        <tr id="VelociraptorBattle"><td>Velociraptor <td class="VelociraptorLevel"></td></td></tr>
+        <tr id="StegosaurusBattle"><td>Stegosaurus <td class="StegosaurusLevel"></td></td></tr>
+        <tr id="SpinosaurusBattle"><td>Spinosaurus <td class="SpinosaurusLevel"></td></td></tr>
+        <tr id="BrachiosaurusBattle"><td>Brachiosaurus <td class="BrachiosaurusLevel"></td></td></tr>
+        <tr id="AnkylosaurusBattle"><td>Ankylosaurus <td class="AnkylosaurusLevel"></td></td></tr>
+        <tr id="ApatosaurusBattle"><td>Apatosaurus <td class="ApatosaurusLevel"></td></td></tr>
+        <tr id="ArchaeopteryxBattle"><td>Archaeopteryx <td class="ArchaeopteryxLevel"></td></td></tr>
+        <tr id="PteranodonBattle"><td>Pteranodon <td class="PteranodonLevel"></td></td></tr>
+        <tr id="TriceratopsBattle"><td>Triceratops <td class="TriceratopsLevel"></td></td></tr>
+        <tr><td><h3 style="text-align: center">The Arena</h3></td></tr><br>
+        <tr><td><select name="dinoSelect" id="dinoSelect">
+        </select></td></tr>
+        <td><canvas width=500 height=500 style="background-color:white;outline:black 5px solid;" id="arena" onclick=testCommand(event)> </canvas> </td>
     </table>
 </div>
 
