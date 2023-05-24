@@ -1,113 +1,14 @@
-<!DOCTYPEhtml><head>
-<title>IncreMining</title>
-
-<script src="jquery-1.11.2.min.js"></script>
-<script src="input_output.js"></script>
-<script src="mathUtil.js"></script>
-<script src="arenaMinigame.js"></script>
-<script src="narrativeManager.js"></script>
-<script src="incremental.js"></script>
-<script src="statAnalysis.js"></script>
-
-<style>
-.selected {
-  color: red;
-  background-color: #beef
-}
-#reports {
-  overflow-y: scroll; 
-  border: 1px solid black; 
-  height: 100px; 
-  width: 50%;
-  margin:auto;
-  display: inline-block;
-}
-</style>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 6</title>
 </head>
 <body>
-<div id="reports" style=> </div>
-
-<img src="sprites/Tyrannosaurus.png" id="TyrannosaurusSprite" hidden>
-<img src="sprites/Velociraptor.png" id="VelociraptorSprite" hidden>
-<img src="sprites/Stegosaurus.png" id="StegosaurusSprite" hidden>
-<img src="sprites/Spinosaurus.png" id="SpinosaurusSprite" hidden>
-<img src="sprites/Brachiosaurus.png" id="BrachiosaurusSprite" hidden>
-<img src="sprites/Ankylosaurus.png" id="AnkylosaurusSprite" hidden>
-<img src="sprites/Apatosaurus.png" id="ApatosaurusSprite" hidden>
-<img src="sprites/Archaeopteryx.png" id="ArchaeopteryxSprite" hidden>
-<img src="sprites/Pteranodon.png" id="PteranodonSprite" hidden>
-<img src="sprites/Triceratops.png" id="TriceratopsSprite" hidden>
-
-<img src="sprites/TyrannosaurusEnemy.png" id="TyrannosaurusSpriteEnemy" scaleX="-1" hidden>
-<img src="sprites/VelociraptorEnemy.png" id="VelociraptorSpriteEnemy" scaleX="-1" hidden>
-<img src="sprites/StegosaurusEnemy.png" id="StegosaurusSpriteEnemy" scaleX="-1" hidden>
-<img src="sprites/SpinosaurusEnemy.png" id="SpinosaurusSpriteEnemy" scaleX="-1" hidden>
-<img src="sprites/BrachiosaurusEnemy.png" id="BrachiosaurusSpriteEnemy" scaleX="-1" hidden>
-<img src="sprites/AnkylosaurusEnemy.png" id="AnkylosaurusSpriteEnemy" scaleX="-1" hidden>
-<img src="sprites/ApatosaurusEnemy.png" id="ApatosaurusSpriteEnemy" scaleX="-1" hidden>
-<img src="sprites/ArchaeopteryxEnemy.png" id="ArchaeopteryxSpriteEnemy" scaleX="-1" hidden>
-<img src="sprites/PteranodonEnemy.png" id="PteranodonSpriteEnemy" scaleX="-1" hidden>
-<img src="sprites/TriceratopsEnemy.png" id="TriceratopsSpriteEnemy" scaleX="-1" hidden>
-
-<h1> <span id=era>Humble Beginnings</span></h1> 
-
-  <button onclick="game.switchPanels('panel1')" id="showPanel1">Excavation</button>
-  <button onclick="game.switchPanels('panel2')" id="showPanel2">Paleontology</button>
-  <button onclick="game.switchPanels('panel3')" id="showPanel3">Combat</button>
-
-  <div class="panel" id="panel1">
-    <table>
-    <tr><td>Ore:</td> <td> </td> <td class="oreNumber"></td><td><button onclick=game.gainOre()> Mine for Ore </button></td></tr>
-    <tr id="minerRow"><td>Mining Rigs: </td> <td></td> <td class="minerNumber"></td><td><button onclick=game.gainMiners()>Build a Mining Rig</button></td><td>Cost: 10 Ore</td></tr><br>
-    <tr id="fossilRow"><td>Fossils: </td> <td></td> <td class="fossilNumber"></td><td><button onclick=game.gainFossils()>Clean a Fossil</button></td><td>Cost: 1 Ore</td></tr>
-    <tr id="cleanerRow"><td>Fossil Cleaners: </td> <td></td> <td class="cleanerNumber"></td><td><button onclick=game.gainCleaners()>Build a Fossil Cleaner</button></td><td>Cost: 20 Ore</td></tr>
-    </table>
-  </div>
-
-<div class="panel" id="panel2">
-    <table><br>
-        <tr><td>Ore: <td class="oreNumber"></td></td></tr>
-        <tr><td>Fossils: <td class="fossilNumber"></td></td></tr>
-        <tr><td><h3>Dinosaur Collection: <button onclick=game.gainDino()>Inspect Fossil</button></h3></td><td> Cost: 100 Fossils</td><td></td></tr>
-        <tr><td><h4>Dinosaurs identified: <td class="dinoNumber"></td></h4></td><td></td><td></td></tr>
-        <tr><td><h4>Fossils collected: </h4></td><td></td><td></td></tr>
-        <tr id="Tyrannosaurus"><td>Tyrannosaurus: <td class="TyrannosaurusNumber"></td></td></tr>
-        <tr id="Velociraptor"><td>Velociraptor: <td class="VelociraptorNumber"></td></td></tr>
-        <tr id="Stegosaurus"><td>Stegosaurus: <td class="StegosaurusNumber"></td></td></tr>
-        <tr id="Spinosaurus"><td>Spinosaurus: <td class="SpinosaurusNumber"></td></td></tr>
-        <tr id="Brachiosaurus"><td>Brachiosaurus: <td class="BrachiosaurusNumber"></td></td></tr>
-        <tr id="Ankylosaurus"><td>Ankylosaurus: <td class="AnkylosaurusNumber"></td></td></tr>
-        <tr id="Apatosaurus"><td>Apatosaurus: <td class="ApatosaurusNumber"></td></td></tr>
-        <tr id="Archaeopteryx"><td>Archaeopteryx: <td class="ArchaeopteryxNumber"></td></td></tr>
-        <tr id="Pteranodon"><td>Pteranodon: <td class="PteranodonNumber"></td></td></tr>
-        <tr id="Triceratops"><td>Triceratops: <td class="TriceratopsNumber"></td></td></tr>
-    </table>
-</div>
-
-<div class="panel"id="panel3">
-    <table>
-        <tr><h3>Available Combatants:</h3></tr>
-        <tr id="TyrannosaurusBattle"><td>Tyrannosaurus <td class="TyrannosaurusLevel"></td></td></tr>
-        <tr id="VelociraptorBattle"><td>Velociraptor <td class="VelociraptorLevel"></td></td></tr>
-        <tr id="StegosaurusBattle"><td>Stegosaurus <td class="StegosaurusLevel"></td></td></tr>
-        <tr id="SpinosaurusBattle"><td>Spinosaurus <td class="SpinosaurusLevel"></td></td></tr>
-        <tr id="BrachiosaurusBattle"><td>Brachiosaurus <td class="BrachiosaurusLevel"></td></td></tr>
-        <tr id="AnkylosaurusBattle"><td>Ankylosaurus <td class="AnkylosaurusLevel"></td></td></tr>
-        <tr id="ApatosaurusBattle"><td>Apatosaurus <td class="ApatosaurusLevel"></td></td></tr>
-        <tr id="ArchaeopteryxBattle"><td>Archaeopteryx <td class="ArchaeopteryxLevel"></td></td></tr>
-        <tr id="PteranodonBattle"><td>Pteranodon <td class="PteranodonLevel"></td></td></tr>
-        <tr id="TriceratopsBattle"><td>Triceratops <td class="TriceratopsLevel"></td></td></tr>
-    </table>
-    <table>
-        <tr><td><h2 style="text-align: center">The Arena</h2></td></tr><br>
-        <tr><td><b>Winnings:</b></td></tr>
-        <tr><td class="winningsNumber"></td></tr>
-        <tr><td><b>Choose active dino:   </b><select name="dinoSelect" id="dinoSelect"></select></td></tr><br>
-        <td><canvas width=500 height=500 style="background-color:white;outline:black 5px solid;" id="arena" onclick=moveDino(event)> </canvas></td>
-    </table> 
-</div>
-
+    <a href="game">Play Incremental Game</a><br>
+    <a href="Discussion.pdf">Discussion</a><br>
+    <a href="game_data.csv">Sample Data</a><br>
 </body>
 </html>
