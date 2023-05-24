@@ -54,6 +54,8 @@ constructor() {
     this.context = this.canvas.getContext("2d");
     this.dinoX = this.canvas.width/2;
     this.dinoY = this.canvas.height/2;
+
+    this.enemies = [];
 }
 
 // the following functions are to be called from buttons in the index.html
