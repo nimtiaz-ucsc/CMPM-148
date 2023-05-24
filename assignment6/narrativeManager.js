@@ -10,7 +10,7 @@ const narrativeManager = class {
   this.beats = [
   {
     triggered: false,
-    test: function(data){return data.ore >= 1}, 
+    test: function(data){return data.ore >= 10}, 
     unlock:function(){io.showElement("minerRow");}, 
     report: function(){
       io.appendIntoElement("You have enough ore to build a mining rig!", "reports");
@@ -19,7 +19,7 @@ const narrativeManager = class {
   },
   {
     triggered: false,
-    test: function(data){return data.ore >= 2}, 
+    test: function(data){return data.ore >= 100}, 
     unlock:function(){io.showElement("fossilRow")},  
     report: function(){
         io.appendIntoElement("You dug up a fossil! Try cleaning up some of the ore you dug out to find more.", "reports");
@@ -28,7 +28,7 @@ const narrativeManager = class {
   },
   {
     triggered: false,
-    test: function(data){return data.fossils >= 2}, 
+    test: function(data){return data.fossils >= 20}, 
     unlock:function(){io.showElement("cleanerRow")},  
     report: function(){
         io.appendIntoElement("You can now build automated fossil cleaners!", "reports");
@@ -36,7 +36,7 @@ const narrativeManager = class {
   },
   {
     triggered: false,
-    test: function(data){return data.fossils >= 3}, 
+    test: function(data){return data.fossils >= 200}, 
     unlock:function(){io.showElement("showPanel2")},  
     report: function(){
         io.appendIntoElement("You have unlocked Paleontology! Time to get to work on those fossils.", "reports");
@@ -45,7 +45,7 @@ const narrativeManager = class {
   },
   {
     triggered: false,
-    test: function(data){return data.dinoTotal >= 1}, 
+    test: function(data){return data.dinoTotal >= 5}, 
     unlock:function(){
         io.showElement("showPanel3");
         setInterval(runArenaMinigame, 100)},  

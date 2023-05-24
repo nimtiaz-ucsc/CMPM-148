@@ -1,6 +1,22 @@
 // list which resources you want to track
 
-trackedValues = ["ore", "miners", "fossils", "cleaners"]
+trackedValues = [
+    "ore", 
+    "miners", 
+    "fossils", 
+    "cleaners",
+    "Tyrannosaurus",
+    "Velociraptor",
+    "Stegosaurus",
+    "Spinosaurus",
+    "Brachiosaurus",
+    "Ankylosaurus",
+    "Apatosaurus",
+    "Archaeopteryx",
+    "Pteranodon",
+    "Triceratops",
+    "winnings"
+]
 
 
 
@@ -19,7 +35,7 @@ time = 0;
       time++;
       for (x in valuesArray) {entry += gameObject[valuesArray[x]] + ", "};
       record.push(entry)
-      //console.log(entry)
+      console.log(entry)
   }, seconds*1000)
 
 

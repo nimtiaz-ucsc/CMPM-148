@@ -9,6 +9,7 @@ constructor() {
     this.miners = 0;
     this.fossils = 1;
     this.cleaners = 0;
+    this.winnings = 0;
 
     this.dinosaurs = [
         "Tyrannosaurus",
@@ -88,10 +89,10 @@ gainCleaners(){
 }
 
 gainDino() {
-    if (this.fossils >= 0) {
-        //this.fossils -= 100;
+    if (this.fossils >= 100) {
+        this.fossils -= 100;
 
-        if (Math.floor(Math.random()*100) <= 49) {
+        if (Math.random() < 0.5) {
             io.appendIntoElement("Did not find any meaningful remains...", "reports");
         } else {
             this.updateDino(Math.floor(Math.random() * 10));
@@ -107,8 +108,6 @@ updateDino(dino) {
     io.appendIntoElement("Found a " + this.dinosaurs[dino] + this.parts[Math.floor(Math.random()*this.parts.length)] + "!", "reports");
     io.writeValueIntoClass(eval(this.varString), this.dinosaurs[dino] + "Number");
     io.writeValueIntoClass("Lv. " + eval(this.varString), this.dinosaurs[dino] + "Level");
-
-    if (eval(this.varString) > this.highestLevel) {this.highestLevel = eval(this.varString);}
     
     if (eval(this.varString) == 1) {
         io.showElement(this.dinosaurs[dino]);
@@ -147,11 +146,23 @@ switchPanels(panel) {
 }
 
 updateDisplay(){
+    this.highestLevel = Math.max(this.Tyrannosaurus, this.Velociraptor, 
+                                 this.Stegosaurus, this.Spinosaurus, 
+                                 this.Brachiosaurus, this.Ankylosaurus, 
+                                 this.Apatosaurus, this.Archaeopteryx, 
+                                 this.Pteranodon, this.Triceratops);
+
     io.writeValueIntoClass(this.ore, "oreNumber")
     io.writeValueIntoClass(this.miners, "minerNumber")
     io.writeValueIntoClass(this.fossils, "fossilNumber")
     io.writeValueIntoClass(this.cleaners, "cleanerNumber")
     io.writeValueIntoClass(this.dinoTotal + "/10", "dinoNumber");
+    io.writeValueIntoClass("$" + this.winnings, "winningsNumber");
+
+    this.dinosaurs.forEach( (dino) => {
+        io.writeValueIntoClass(eval("this." + dino), dino + "Number");
+        io.writeValueIntoClass("Lv. " + eval("this." + dino), dino + "Level");
+    }) 
 }
 
 };

@@ -40,6 +40,17 @@
 <img src="sprites/Pteranodon.png" id="PteranodonSprite" hidden>
 <img src="sprites/Triceratops.png" id="TriceratopsSprite" hidden>
 
+<img src="sprites/TyrannosaurusEnemy.png" id="TyrannosaurusSpriteEnemy" scaleX="-1" hidden>
+<img src="sprites/VelociraptorEnemy.png" id="VelociraptorSpriteEnemy" scaleX="-1" hidden>
+<img src="sprites/StegosaurusEnemy.png" id="StegosaurusSpriteEnemy" scaleX="-1" hidden>
+<img src="sprites/SpinosaurusEnemy.png" id="SpinosaurusSpriteEnemy" scaleX="-1" hidden>
+<img src="sprites/BrachiosaurusEnemy.png" id="BrachiosaurusSpriteEnemy" scaleX="-1" hidden>
+<img src="sprites/AnkylosaurusEnemy.png" id="AnkylosaurusSpriteEnemy" scaleX="-1" hidden>
+<img src="sprites/ApatosaurusEnemy.png" id="ApatosaurusSpriteEnemy" scaleX="-1" hidden>
+<img src="sprites/ArchaeopteryxEnemy.png" id="ArchaeopteryxSpriteEnemy" scaleX="-1" hidden>
+<img src="sprites/PteranodonEnemy.png" id="PteranodonSpriteEnemy" scaleX="-1" hidden>
+<img src="sprites/TriceratopsEnemy.png" id="TriceratopsSpriteEnemy" scaleX="-1" hidden>
+
 <h1> <span id=era>Humble Beginnings</span></h1> 
 
   <button onclick="game.switchPanels('panel1')" id="showPanel1">Excavation</button>
@@ -90,10 +101,12 @@
         <tr id="TriceratopsBattle"><td>Triceratops <td class="TriceratopsLevel"></td></td></tr>
     </table>
     <table>
-        <tr><td><h3 style="text-align: center">The Arena</h3></td></tr><br>
-        <tr><td>Choose active dino: <select name="dinoSelect" id="dinoSelect"></select></td></tr><br>
-        <td><canvas width=500 height=500 style="background-color:white;outline:black 5px solid;" id="arena" onclick=moveDino(event)> </canvas> </td>
-    </table>
+        <tr><td><h2 style="text-align: center">The Arena</h2></td></tr><br>
+        <tr><td><b>Winnings:</b></td></tr>
+        <tr><td class="winningsNumber"></td></tr>
+        <tr><td><b>Choose active dino:   </b><select name="dinoSelect" id="dinoSelect"></select></td></tr><br>
+        <td><canvas width=500 height=500 style="background-color:white;outline:black 5px solid;" id="arena" onclick=moveDino(event)> </canvas></td>
+    </table> 
 </div>
 
 </body>

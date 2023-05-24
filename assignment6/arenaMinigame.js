@@ -8,7 +8,7 @@ function runArenaMinigame() {
     game.context.drawImage(document.getElementById(currentDino + "Sprite"), game.dinoX - (dinoSize/2), game.dinoY - (dinoSize/2), dinoSize, dinoSize);
     game.context.fillStyle = "black";
     game.context.font = "16px Times New Roman";
-    game.context.fillText("Lv. " + eval("game."+currentDino), game.dinoX - (dinoSize/2), game.dinoY - (dinoSize/2));
+    game.context.fillText("Lv. " + eval("game." + currentDino), game.dinoX - (dinoSize/2), game.dinoY - (dinoSize/2));
 
     if (Math.random() < .15 && game.enemies.length <= 3){
         var max = game.canvas.height - dinoSize;
@@ -17,7 +17,7 @@ function runArenaMinigame() {
       }  
     game.enemies.forEach(function (e){
         e.x -= 5;
-        game.context.drawImage(document.getElementById(e.sprite + "Sprite"), e.x - (dinoSize/2), e.y - (dinoSize/2), dinoSize, dinoSize);
+        game.context.drawImage(document.getElementById(e.sprite + "SpriteEnemy"), e.x - (dinoSize/2), e.y - (dinoSize/2), dinoSize, dinoSize);
         if (e.level > eval("game." + currentDino)) {
             game.context.fillStyle = "red";
         } else {
@@ -26,6 +26,18 @@ function runArenaMinigame() {
         game.context.fillText("Lv. " + e.level, e.x - (dinoSize/2), e.y - (dinoSize/2));
 
         if (e.x <= 0) {
+            game.enemies.splice(game.enemies.indexOf(e), 1);
+        }
+
+        if ((e.x > game.dinoX - dinoSize) && (e.x < game.dinoX + dinoSize) && (e.y > game.dinoY - dinoSize) && (e.y < game.dinoY + dinoSize)) {
+            if (e.level > eval("game." + currentDino)) {
+                if (eval("game." + currentDino) > 1) {
+                    eval("game." + currentDino + "--");
+                }
+            } else {
+                game.winnings += Math.floor(Math.random() * 1000 * eval("game." + currentDino) / (eval("game." + currentDino) - e.level + 1));
+            }
+
             game.enemies.splice(game.enemies.indexOf(e), 1);
         }
     })
