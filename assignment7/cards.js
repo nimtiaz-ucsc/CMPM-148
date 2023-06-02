@@ -1,65 +1,41 @@
 
 firstCard = {
-  prompt: "Isn't painting Wonderful???",
-  rightChoiceText: "I LOVE PAINTING",
-  rightChoice: function(){
-    addResource("veggies", 20)
-      addPackToDeck("bumbling")
-    addToTopDeck("VanGoghHappy")
+    prompt: "You come across this strange, black, and slimy lifeform. It writhes in place and feels... off. You feel a faint pull towards it.",
+    rightChoiceText: "Try to grab it",
+      rightChoice: function(){
+        addResource("power", 10);
+        addToTopDeck("symbiote");
+      },
+    leftChoiceText: "Approach cautiously", 
+    leftChoice: function(){
+        addResource("responsibility", 10);
+        addToTopDeck("symbiote");
     },
-  
-  leftChoiceText: "PAINTING SUCKS", 
-  leftChoice: function(){
-    addResource("meat", 20)
-      addPackToDeck("bumbling")
-    addToTopDeck("VanGoghBetrayed")
-    enemiesMade += 1;
-  },
-  name: "Van Gogh",
-  resultText: "",
-  image: "./images/VanGosh.png",
-  priority: 1,
-  pack : "none"
+    name: "Symbiote",
+    resultText: "",
+    image: "./images/Symbiote.png",
+    priority: 1,
+    pack : "none"
 }
 
 
 cardPool = {
-  "uniqueIDList" : ["VanGoghHappy", "VanGoghBetrayed"],
-  
-  "VanGoghHappy" : {
-    prompt: "Really? Let's be friends",
-    rightChoiceText: "Lol Okay",
-      rightChoice: function(){
-      addResource("veggies", 10)
-      },
-    leftChoiceText: "XD HAHA. . .No", 
-    leftChoice: function(){
-      addResource("meat", 20)
-      addToTopDeck("VanGoghBetrayed")
-    enemiesMade += 1;
-    },
-    name: "Van Gogh",
-    resultText: "",
-    image: "./images/VanGosh.png",
-    priority: 2,
-    pack : "none"
-  },
+  "uniqueIDList" : ["symbiote"],
 
-
-  "VanGoghBetrayed": {
-    prompt: "To Heck with you",
-    rightChoiceText: ". . . ",
+  "symbiote": {
+    prompt: "The slime lunges towards you, and crawls up your arm and soaks into your suit. The bright red and blue is replaced with a deep black. You feel more tense, as if your senses have heightened.",
+    rightChoiceText: "Go on patrol",
       rightChoice: function(){
-      addResource("veggies", 20)
+        addPackToDeck("foes");
       },
-    leftChoiceText: "Fine. . . ", 
+    leftChoiceText: "Go home for the day", 
     leftChoice: function(){
-      addResource("meat", 100)
+        addPackToDeck("friends");
     },
-    name: "Van Gogh",
+    name: "Symbiote",
     resultText: "",
-    image: "./images/VanGosh.png",
-    priority: 2,
+    image: "./images/Symbiote.png",
+    priority: 1,
     pack : "none"
   }
 
