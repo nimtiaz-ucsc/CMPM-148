@@ -6,13 +6,12 @@ deck= [];
 
 // card is a key, except when it is an onject and not from the pool
 function addToTopDeck(card, fromPool=true){
-
   if (fromPool)deck.push(cardPool[card])
   else deck.push(card);
-  console.log(card)
+  console.log("OVER HERE\n" + card)
 }
 function drawFromDeck(){
-  if (deck.length ==0) alert ("out of cards :(")
+  if (deck.length ==0) checkFail();
   return deck.pop();
 }
 function shuffleIntoDeck(card, fromPool=true){
@@ -84,4 +83,5 @@ function shuffleDeck(array){
     }
     
   } 
+  console.log("CARD POOL\n" + cardPool.uniqueIDList)
   }

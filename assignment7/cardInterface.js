@@ -13,6 +13,7 @@ let anxiety = 40 // how anxious the speaker is
 
 
 function insertCardInfo(card) {
+    console.log("HELLO " + card);
   document.getElementById("textRight").innerHTML = card.rightChoiceText;
   document.getElementById("textLeft").innerHTML =  card.leftChoiceText;
   document.getElementById("resultText").innerHTML = card.resultText;
@@ -120,7 +121,6 @@ $( document ).ready( function(){
 function updateUI(){
   
   //console.log(mousePos);
-  updatePlayerData()
     if (active){
       //console.log(cardOrigin, (mousePos.x-cardOrigin), event)
       let posValue =  (((mousePos.x-cardOrigin)-200))/9
