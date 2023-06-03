@@ -43,5 +43,5 @@ defaultFailCard = {
   },
   name: "With Great Power, Comes Great Responsibility",
   resultText: "",
-  image: "./images/HalfSpiderMan.png"
+  image: "./images/SpiderManHalf.png"
 }

@@ -36,15 +36,18 @@ function checkFail() {
       if (resources[x].value > 100) {failures.push({resource: resources[x].key, level: "high"})}
       if (resources[x].value < 0) {failures.push({rsource: resources[x].key, level: "low"})}
   }
-   console.log(failures)
+  if (failures.length == 0 && deck.length == 0) {
+    addToTopDeck(defaultFailCard, false);
+    return;
+  }
   for (x in failures){
     let f = failures[x];
     for ( i in failCards){
       let failCard = failCards[i];
-      if (failCard.resource === f.resource && failCard.level === f.level)
-        addToTopDeck(failCard.card, false)
-      else
-        addToTopDeck(defaultFailCard, false)
+      if (failCard.resource === f.resource && failCard.level === f.level) {
+        addToTopDeck(failCard.card, false);
+        return;
+      }
     }
     
   }

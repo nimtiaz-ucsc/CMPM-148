@@ -13,7 +13,6 @@ let anxiety = 40 // how anxious the speaker is
 
 
 function insertCardInfo(card) {
-    console.log("HELLO " + card);
   document.getElementById("textRight").innerHTML = card.rightChoiceText;
   document.getElementById("textLeft").innerHTML =  card.leftChoiceText;
   document.getElementById("resultText").innerHTML = card.resultText;
